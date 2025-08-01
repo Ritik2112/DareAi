@@ -1,0 +1,157 @@
+/* src/Navbar.css */
+
+/* Basic styling for the entire navbar */
+.navbar {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Distribute items with space between them */
+  align-items: center; /* Vertically center items */
+  padding: 1rem 2rem; /* Add some padding around the navbar */
+  background-color: white; /* Updated background color */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); -- Removed as per request */
+  font-family: 'Inter', sans-serif; /* Use Inter font */
+  /* border-radius: 0.5rem; -- Removed as per request */
+  margin-bottom: 1rem; /* Space below the navbar */
+  position: relative; /* Needed for absolute positioning of mobile menu */
+  z-index: 1000; /* Ensure navbar is above the sliding menu when closed */
+}
+
+/* Styling for the brand/logo on the left */
+.navbar-brand {
+  font-size: 1.5rem; /* Larger font size for the brand name */
+  font-weight: bold; /* Make it bold */
+  color: #333; /* Dark grey color */
+  padding: 0.5rem 1rem; /* Padding around the brand text */
+  border-radius: 0.375rem; /* Slightly rounded corners for the brand */
+}
+
+/* Styling for the list of navigation links (desktop view) */
+.navbar-links {
+  list-style: none; /* Remove bullet points from the list */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Use flexbox for horizontal alignment of links */
+  gap: 1.5rem; /* Space between each link item */
+}
+
+/* Styling for individual list items */
+.navbar-links li {
+  /* No specific styling needed here, as styling is on the anchor tag */
+}
+
+/* Styling for the navigation links (anchor tags) */
+.navbar-links a {
+  text-decoration: none; /* Remove underline from links */
+  color: #555; /* Medium grey color for links */
+  font-weight: 500; /* Medium font weight */
+  padding: 0.5rem 0.75rem; /* Padding around the link text */
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+  border-radius: 0.375rem; /* Rounded corners for the links */
+}
+
+/* Hover effect for navigation links */
+.navbar-links a:hover {
+  color: #007bff; /* Change color on hover (e.g., to a blue) */
+  background-color: #f0f0f0; /* Light background on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Active link styling (optional, if you want to highlight the current page) */
+.navbar-links a.active {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Mobile menu toggle button */
+.menu-toggle {
+  display: none; /* Hidden by default on larger screens */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001; /* Ensure it's above other content */
+}
+
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row; /* Keep brand and toggle on one row */
+    justify-content: space-between; /* Space between brand and toggle */
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .menu-toggle {
+    display: block; /* Show hamburger icon on small screens */
+  }
+
+  .navbar-links {
+    /* Mobile Menu Overlay - slides in from right */
+    position: fixed; /* Fixed position relative to the viewport */
+    top: 0; /* Align to the top of the viewport */
+    right: -100%; /* Initially push it off-screen to the right */
+    width: 80%; /* Width of the mobile menu */
+    max-width: 300px; /* Maximum width for larger mobile devices */
+    height: 100%; /* Full height of the viewport */
+    background-color: #ffffff; /* White background for the menu */
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2); /* Shadow on the left edge */
+    transition: right 0.4s ease-out; /* Smooth transition for the 'right' property */
+    z-index: 999; /* Below the navbar, but above page content */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    flex-direction: column; /* Stack links vertically */
+    align-items: center; /* Center links horizontally within the menu */
+    padding-top: 5rem; /* Padding from the top to clear the fixed navbar */
+    display: none; /* Hide by default */
+  }
+
+  .navbar-links.open {
+    right: 0; /* Slide into view */
+    display: flex; /* Show the menu as a flex container */
+  }
+
+  .navbar-links li {
+    width: 100%; /* Make list items take full width */
+    margin-bottom: 1rem; /* Space between stacked links */
+  }
+
+  .navbar-links a {
+    display: block; /* Make links block-level to fill width */
+    text-align: center; /* Center text in block links */
+    padding: 0.75rem; /* More padding for easier tapping */
+    font-size: 1.2rem; /* Larger font size for mobile links */
+  }
+}
+
+/* Adjustments for desktop view to ensure mobile styles don't interfere */
+@media (min-width: 769px) {
+  .navbar-links {
+    /* Reset mobile styles for desktop */
+    position: static; /* Back to normal document flow */
+    height: auto;
+    width: auto;
+    max-width: none;
+    padding: 0;
+    box-shadow: none;
+    transition: none;
+    z-index: auto;
+    overflow-y: visible;
+    flex-direction: row;
+    display: flex; /* Ensure it's always visible on desktop */
+  }
+
+  .navbar-links.open {
+    right: auto; /* Reset right property */
+  }
+
+  .menu-toggle {
+    display: none; /* Hide hamburger on desktop */
+  }
+}
