@@ -22,6 +22,14 @@ const accordionData = [
 ];
 
 const BusinessGrowth = () => {
+
+     const handleScrollToSection = () => {
+    const section = document.getElementById('Book-A-Demo');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const [activeIndex, setActiveIndex] = useState(1);
 
   const toggleAccordion = (index) => {
@@ -58,6 +66,10 @@ const BusinessGrowth = () => {
             </div>
           );
         })}
+      </div>
+
+         <div className="business-button-wrapper">
+        <button className="SStrategy-call-btn" onClick={handleScrollToSection}>Book your strategy call</button>
       </div>
     </section>
   );

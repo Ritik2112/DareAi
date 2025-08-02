@@ -35,6 +35,14 @@ const advantages = [
 ];
 
 export default function AdvantageSection() {
+
+     const handleScrollToSection = () => {
+    const section = document.getElementById('Book-A-Demo');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="advantage-section">
       <h2 className="advantage-title">
@@ -54,7 +62,7 @@ export default function AdvantageSection() {
       </div>
 
       <div className="advantage-button-wrapper">
-        <button className="strategy-call-btn">Book your strategy call</button>
+        <button className="strategy-call-btn" onClick={handleScrollToSection}>Book your strategy call</button>
       </div>
     </section>
   );

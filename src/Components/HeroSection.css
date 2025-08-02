@@ -4,11 +4,11 @@
   display: flex; /* Use flexbox for horizontal layout */
   justify-content: center; /* Center content horizontally */
   align-items: center; /* Vertically center content */
-  padding: 1rem 2rem; /* Ample padding around the section */
+  padding: 0rem 3rem; /* Ample padding around the section */
   background-color: white; /* Light background to match the overall page */
-  font-family: 'Inter', sans-serif; /* Consistent font */
-  gap: 3rem; /* Space between the text content and the image */
-  max-width: 1200px; /* Max width to keep content contained */
+  font-family: 'Space Grotesk',; /* Consistent font */
+  gap: 0.1rem; /* Space between the text content and the image */
+  max-width: 100%; /* Max width to keep content contained */
   margin: 1rem auto; /* Center the section on the page with vertical margin */
   
  
@@ -17,13 +17,13 @@
 .hero-content {
   flex: 1; /* Allow content to take available space */
   text-align: left; /* Align text to the left */
-  max-width: 500px; /* Limit content width for readability */
-  margin-top: -40px;
+  max-width: 700px; /* Limit content width for readability */
+ 
 }
 
 .hero-title {
-  font-size: 3rem; /* Large, prominent title */
-  font-weight: bold;
+  font-size: 3.5rem; /* Large, prominent title */
+  font-weight: 500;
   color: #333; /* Dark color for text */
   margin-bottom: 1rem; /* Space below the title */
   line-height: 1.2; /* Adjust line height for better appearance */
@@ -70,7 +70,7 @@
 }
 
 .hero-image {
-  max-width: 70%; /* Ensure image is responsive */
+  max-width:80%; /* Ensure image is responsive */
   height: auto; /* Maintain aspect ratio */
   display: block; /* Remove extra space below image */
   border-radius: 1rem; /* Rounded corners for the image */

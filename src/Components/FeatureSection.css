@@ -1,0 +1,324 @@
+/* --- CSS Variables --- */
+:root {
+  --color-primary-dark: #104041;
+  --color-text-secondary: black;
+  --color-bg-main:  #ffffff;
+  --color-bg-card-peach: #F3F3F3;
+  --color-bg-card-white: #FFFFFF;
+  --font-main: 'Space Grotesk', ;
+}
+
+/* --- Main Section Wrapper --- */
+.features-section {
+  font-family: var(--font-main);
+  background-color: var(--color-bg-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 2rem;
+  margin: 40px auto;
+  justify-content: center;
+  min-height: 85vh;
+  padding: 10px 40px ;
+
+  box-sizing: border-box;
+  
+ 
+}
+
+
+/* --- Section Header --- */
+.features-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+ 
+  
+}
+
+.features-header h2 {
+  font-size: 50px;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  line-height: 1.25;
+  margin: 0 0 1rem 0;
+   color: black;
+   font-family: 'Space Grotesk',;
+}
+
+.features-header p {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* --- Features Grid Layout --- */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* --- General Card Styling --- */
+.feature-card {
+  border-radius: 40px;
+  padding: 2.5rem;
+  box-shadow: 0px 6px 0px 0px #000;
+  position: relative;
+  overflow: hidden; /* Important for corner illustrations */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes text up */
+ 
+}
+.feature-card2 {
+  border-radius: 40px;
+  padding: 2.5rem;
+  box-shadow: 0px 6px 0px 0px #FAE400;
+  position: relative;
+  overflow: hidden; /* Important for corner illustrations */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes text up */
+  
+}
+
+.card-content h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--color-primary-dark);
+  line-height: 1.3;
+  margin: 0 0 1rem 0;
+  text-align: left;
+}
+
+.card-content2 h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--color-primary-dark);
+  line-height: 1.3;
+  margin: 0 0 1rem 0;
+  text-align: left;
+}
+
+
+.card-content p {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.2;
+  margin: 0;
+  max-width: 230px; /* Constrain text width */
+  text-align: left;
+  font-weight: 500;
+}
+
+.card-content2 p {
+  font-size: 1rem;
+  color: white;
+  line-height: 1.2;
+  margin: 0;
+  max-width: 230px; /* Constrain text width */
+  text-align: left;
+  font-weight: 500;
+
+}
+.highlight-text {
+  background-color: yellow; /* or #fff59d for a softer tone */
+  padding: 4px 12px;
+  border-radius: 0.75rem;
+  display: inline-block;
+  line-height: 1;
+}
+
+.highlight-text2 {
+  background-color: #FFFFFF; /* or #fff59d for a softer tone */
+  padding: 4px 12px;
+  border-radius: 0.75rem;
+  display: inline-block;
+  line-height: 1;
+}
+.highlight-text3 {
+  background-color: #FFFFFF; /* or #fff59d for a softer tone */
+  padding: 4px 12px;
+  border-radius: 0.75rem;
+  display: inline-block;
+  line-height: 1;
+}
+
+.highlight-text4 {
+  background-color: #FAE400; /* or #fff59d for a softer tone */
+  padding: 4px 12px;
+  border-radius: 0.75rem;
+  display: inline-block;
+  line-height: 1;
+}
+
+.cardcare-content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  line-height: 1.3;
+  margin: 0 0 1rem 0;
+  text-align: left;
+}
+.cardcare-content p {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 450px; /* Constrain text width */
+  text-align: left;
+}
+
+.cardinsight-content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  line-height: 1.3;
+  margin: 0 0 1rem 0;
+  text-align: left;
+}
+.cardinsight-content p {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 700px; /* Constrain text width */
+  text-align: left;
+}
+
+
+
+/* --- Specific Card Styles --- */
+.Ai_Driven{
+  background-color: var(--color-bg-card-peach);
+}
+
+.Zero-click {
+  background-color: #FAE400;
+}
+.Revenue{
+    background-color: #000;
+}
+.Traditional{
+    background-color: #ffffff;
+    border: 1px solid #000;
+}
+
+.insights-card {
+  grid-column: 1 / -1; /* Makes this card span both columns */
+  background-color: #F3F3F3;
+ 
+}
+
+
+
+/* --- Card Illustrations --- */
+.card-illustration-corner {
+  position: absolute;
+  bottom: 2rem;
+  right:2rem;
+  width: 200px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+  
+}
+
+
+
+.card-illustration-main img {
+ position: absolute;
+  bottom: 0rem;
+  right:0rem;
+  width: 300px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  .features-grid {
+    grid-template-columns: 1fr; /* Stack all cards */
+    gap: 1.5rem;
+  }
+
+  .insights-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2.5rem; /* Reset padding for stacked view */
+  }
+
+  .insights-card .card-content {
+    flex-basis: auto;
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .insights-card .card-content p {
+    margin: 0 auto; /* Center the text block */
+  }
+
+  .card-illustration-main {
+    align-self: center;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .features-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .features-header p {
+    font-size: 1rem;
+  }
+
+  .feature-card {
+    padding: 2rem;
+  }
+
+  .card-content h3 {
+    font-size: 1.7rem;
+  }
+
+  .card-illustration-main img {
+    max-width: 220px;
+  }
+}
+
+.card-content,
+.cardcare-content,
+.cardinsight-content {
+  position: relative; /* This is crucial for z-index to work */
+  z-index: 2; 
+}
+
+/* --- Button Styling --- */
+.better-workplace-buttons {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0.8rem;
+  
+}
+.better-workplace-button {
+  padding: 14px 30px;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  background-color: #000;
+}
+
+

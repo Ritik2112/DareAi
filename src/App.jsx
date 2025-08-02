@@ -3,12 +3,16 @@ import React from 'react';
 import Navbar from './Components/Navbar'; // Import your Navbar component
 import HeroSection from './Components/HeroSection'; // Import your HeroSection component
 import './App.css'; // Assuming you have an App.css for general styling
-import WhyDareAi from './Components/WhyDareAi';
+
 import BookDemo from './Components/BookDemo';
 import BusinessGrowth from './Components/BusinessGrowth';
 import AdvantageSection from './Components/AdvantageSection';
 import SpeedSearch from './Components/SpeedSearch';
-import Testimonials from './Components/Testimonials';
+
+
+
+import FeatureSection from './Components/FeatureSection';
+import Newtestimonials from './Components/Newtestimonials';
 
 function App() {
   return (
@@ -17,6 +21,7 @@ function App() {
       <main className="container">
           <Navbar /> {/* Render your Navbar component here */}
       <HeroSection /> {/* Render your HeroSection component here */}
+       
    
       
        
@@ -26,9 +31,9 @@ function App() {
       
        
        
-        <section id="why-dareaisearch" >
-             <WhyDareAi />
+        <section id="Why-DareAi" >
              
+              <FeatureSection />
        </section>
         <SpeedSearch />
        <BusinessGrowth/>
@@ -36,12 +41,19 @@ function App() {
               <section id="features" >
 
           <AdvantageSection />
+        
+          
+           
           
         </section>
 
-              <Testimonials/>
+              <Newtestimonials/>
+               <section id="Book-A-Demo" >
+             
+               <BookDemo />
+       </section>
        
-        <BookDemo />
+       
       </main>
     </div>
   );

@@ -5,15 +5,21 @@
   display: flex; /* Use flexbox for alignment */
   justify-content: space-between; /* Distribute items with space between them */
   align-items: center; /* Vertically center items */
-  padding: 1rem 2rem; /* Add some padding around the navbar */
-  background-color: white; /* Updated background color */
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); -- Removed as per request */
-  font-family: 'Inter', sans-serif; /* Use Inter font */
-  /* border-radius: 0.5rem; -- Removed as per request */
-  margin-bottom: 1rem; /* Space below the navbar */
+  padding: 1rem 3rem; /* Add some padding around the navbar */
+  background-color: rgb(213, 218, 150); /* Updated background color */
+
+  font-family: 'Geomanist',;
+ 
   position: relative; /* Needed for absolute positioning of mobile menu */
   z-index: 1000; /* Ensure navbar is above the sliding menu when closed */
-}
+  
+  border-radius: 40px;
+    width: 100%;
+
+  top: 0;
+
+  box-sizing: border-box;
+  }
 
 /* Styling for the brand/logo on the left */
 .navbar-brand {
@@ -50,14 +56,14 @@
 
 /* Hover effect for navigation links */
 .navbar-links a:hover {
-  color: #007bff; /* Change color on hover (e.g., to a blue) */
+  color: black; /* Change color on hover (e.g., to a blue) */
   background-color: #f0f0f0; /* Light background on hover */
   transform: translateY(-2px); /* Slight lift effect on hover */
 }
 
 /* Active link styling (optional, if you want to highlight the current page) */
 .navbar-links a.active {
-  color: #007bff;
+  color: yellow;
   font-weight: bold;
 }
 
