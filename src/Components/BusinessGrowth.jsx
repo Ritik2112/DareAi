@@ -1,6 +1,7 @@
 // src/BusinessGrowth.jsx
 import React, { useState } from 'react';
 import './BusinessGrowth.css';
+import DareAIImage from '../assets/DareAi1.webp'; // Import the image file
 
 const accordionData = [
   {
@@ -22,8 +23,7 @@ const accordionData = [
 ];
 
 const BusinessGrowth = () => {
-
-     const handleScrollToSection = () => {
+  const handleScrollToSection = () => {
     const section = document.getElementById('Book-A-Demo');
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
@@ -57,10 +57,17 @@ const BusinessGrowth = () => {
                 <span className="accordion-title">{title}</span>
                 <span className="accordion-icon">{isActive ? '−' : '+'}</span>
               </div>
-              {isActive && content && (
+              {/* Conditional rendering for the content and image */}
+              {isActive && (
                 <>
                   <hr className="accordion-divider" />
-                  <p className="accordion-content">{content}</p>
+                  {/* The image is displayed here when the first item is active */}
+                  {id === 1 && (
+                    <div className="accordion-content-media">
+                        <img src={DareAIImage} alt="AI Visibility Tracking" className="accordion-content-image" />
+                    </div>
+                  )}
+                  <p className="accordion-content-text">{content}</p>
                 </>
               )}
             </div>
@@ -68,7 +75,7 @@ const BusinessGrowth = () => {
         })}
       </div>
 
-         <div className="business-button-wrapper">
+      <div className="business-button-wrapper">
         <button className="SStrategy-call-btn" onClick={handleScrollToSection}>Book your strategy call</button>
       </div>
     </section>

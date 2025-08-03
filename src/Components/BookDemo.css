@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
 
 .book-demo-section {
-  padding: 80px 20px;
+  padding: 80px 50px;
   background-color: #fff;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Space Grotesk';
   text-align: center;
 }
 
@@ -18,13 +18,13 @@
 .book-demo-wrapper {
   background-color: #f6f6f6;
   border-radius: 30px;
-  padding: 60px 80px;
+  padding: 60px 60px;
   max-width: 1100px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 50px;
+  gap: 5px;
   position: relative;
 }
 
@@ -34,8 +34,14 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 400px;
+  max-width: 600px;
   z-index: 1;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .form-field label {
@@ -44,6 +50,7 @@
   margin-bottom: 8px;
   display: block;
   text-align: left;
+  padding-left: 10px;
 }
 
 .form-field input {
@@ -54,7 +61,8 @@
   font-size: 16px;
   transition: border 0.3s;
   background-color: #fff;
-  color: #000;
+  color:#000;
+  box-sizing: border-box; /* Ensures padding is included in the width */
 }
 
 .form-field input::placeholder {
@@ -68,28 +76,30 @@
 
 /* Button */
 .send-button {
-  width: 100%; /* Make it same width as input fields */
-  margin-top: 20px;
+  margin-top: 30px; /* Remove top margin, as the parent form-field div has the gap */
   background-color: #1a1a1a;
   color: #fff;
   border: none;
-  padding: 16px;
+  padding: 14px 18px; /* Match input field padding */
   border-radius: 12px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 100%; /* Make the button full width of its parent (.form-field) */
+  box-sizing: border-box; /* Ensures padding is included in the width */
 }
+
 .send-button:hover {
   background-color: #000;
 }
 
-/* Right-side Illustration */
+/* Right-side Illustration and Starburst */
 .form-illustration {
   flex-shrink: 0;
   position: relative;
   width: 350px;
-  height: 600px;
+  height: 350px;
 }
 
 .star-burst-container {
@@ -117,11 +127,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: repeating-conic-gradient(
-    from 0deg,
-    transparent 0deg 3.5deg,
-    #000 3.5deg 4deg
-  );
+  background: repeating-conic-gradient(from 0deg, transparent 0deg 3.5deg, #000 3.5deg 4deg);
   border-radius: 50%;
   opacity: 0.1;
 }
@@ -131,19 +137,17 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 220px;
+  width: 320px;
   height: auto;
 }
 
-/* Responsive styles */
 @media (max-width: 900px) {
   .book-demo-wrapper {
     flex-direction: column;
     align-items: center;
     padding: 40px 30px;
   }
-
   .form-illustration {
-    display: none; /* Hide the illustration on smaller screens */
+    display: none;
   }
 }

@@ -32,25 +32,30 @@ function App() {
        
        
         <section id="Why-DareAi" >
-             
-              <FeatureSection />
+             <FeatureSection />
        </section>
-        <SpeedSearch />
-       <BusinessGrowth/>
-             
-              <section id="features" >
 
-          <AdvantageSection />
-        
-          
-           
-          
+        <section id="What-is-geo" >
+              <SpeedSearch />
+       </section>
+       
+       
+        <section id="benefits" >
+          <BusinessGrowth/>
+        </section>
+             
+          <section id="features" >
+          <AdvantageSection /> 
         </section>
 
-              <Newtestimonials/>
-               <section id="Book-A-Demo" >
-             
-               <BookDemo />
+          <section id="reviews" >     
+           <Newtestimonials/>
+       </section>
+       
+
+              
+       <section id="Book-A-Demo" >     
+           <BookDemo />
        </section>
        
        

@@ -1,17 +1,15 @@
 // src/BookDemo.jsx
 import React, { useRef } from 'react';
 import './BookDemo.css';
-import demoImage from '../assets/demo_img.webp'; // The starburst image on the right
-import useZohoForm from './useZohoForm'; // Import the new hook
+import demoImage from '../assets/book_DareAi.webp';
+import useZohoForm from './useZohoForm';
 
 const BookDemo = () => {
   const formRef = useRef(null);
   const { ZohoHiddenFields } = useZohoForm(formRef);
 
   const handleSubmit = (event) => {
-    if (window.checkMandatory4051926000100401011()) {
-      // The form will submit normally if validation passes.
-      // The form's `action` will handle the POST request.
+    if (window.checkMandatory4051926000100401011 && window.checkMandatory4051926000100401011()) {
       return true;
     } else {
       event.preventDefault();
@@ -58,11 +56,18 @@ const BookDemo = () => {
             <input type="email" id="email" name="Email" placeholder="Email" required />
           </div>
           
-          <button type="submit" className="send-button">Send Message</button>
+          {/* The button is now wrapped in a form-field div */}
+          <div className="form-field">
+            <button type="submit" className="send-button">Send Message</button>
+          </div>
+
         </form>
 
         <div className="form-illustration">
-          <img src={demoImage} alt="Decorative Graphic" />
+          <div className="star-burst-container">
+            <div className="star-burst-lines"></div>
+            <img src={demoImage} alt="Decorative Graphic" className="star-image" />
+          </div>
         </div>
       </div>
     </section>

@@ -3,37 +3,32 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import './Newtestimonials.css';
 
+// Import your local image file
+import partner3 from '../assets/partner3.webp';
+import partner2 from '../assets/partner2.png';
+import partner1 from '../assets/partner1.png'; // Assuming you have a local image for partner1
+
 const testimonials = [
   {
-    quote: "This platform revolutionized our data analysis process. The speed and accuracy are unparalleled. A must-have for any data-driven team.",
-    name: "Priya Sharma",
-    designation: "Data Scientist at QuantumLeap",
-    src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    quote: "With their expertise in digital marketing and keenness to understand the client's business in-depth, Digidarts not only solved this problem but scaled our reseller acquisition to new levels",
+    name: "Sudhanshu Shekhar",
+    designation: " Vice President - Marketing at Meesho",
+    src: partner1,
   },
   {
-    quote: "The user interface is incredibly intuitive, which made the onboarding process for my team a breeze. We were up and running in hours, not days.",
-    name: "Marcus Johnson",
-    designation: "Head of Operations at Synergy Corp",
-    src: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    quote: "The experience of working with Digidarts has set the benchmark, as far as I am concerned, with respect to the ways they service clients. I have worked with many agencies in the past, and I found Digidarts to be the best.",
+    name: "Sriram Somayajula",
+    designation: " Co-Founder & CEO at Indigo Learn",
+    src: partner2,
   },
   {
-    quote: "Customer support is top-notch. They are responsive, knowledgeable, and genuinely invested in our success. It feels like a true partnership.",
-    name: "Isabella Rossi",
-    designation: "Client Success Manager at Horizon",
-    src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    quote: "Digidarts spearheaded our full-funnel marketing and we are extremely satisfied with their performance. They have enabled our growth month after month and consistently achieve targets. I find the team to be diligent, creative and equipped to solve our queries. ",
+    name: "Mukund Rao",
+    designation: "Co-Founder at Muvin",
+    src: partner3, // Using your local image here
   },
-  {
-    quote: "I'm impressed by the constant stream of updates and new features. The development team is clearly passionate and listens to user feedback.",
-    name: "Kenji Tanaka",
-    designation: "Software Engineer at CodeCrafters",
-    src: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%D%3D",
-  },
-  {
-    quote: "The ROI was almost immediate. It streamlined our workflows so effectively that we cut project delivery times by nearly 30%.",
-    name: "Fatima Al-Jamil",
-    designation: "CFO at Apex Financial",
-    src: "https://images.unsplash.com/photo-1557053910-d9eadeed1c58?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%D%3D",
-  },
+ 
+ 
 ];
 
 const AnimatedTestimonials = ({ testimonials, autoplay = true }) => {
