@@ -1,0 +1,59 @@
+/* src/WhyTrustUs.css */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
+
+.why-trust-us-section {
+  font-family: 'Space Grotesk', sans-serif;
+  padding: 50px 40px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.partners-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: #e4e159;
+  border-radius: 20px;
+  padding: -10px 20px;
+ 
+}
+
+.partners-heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.partners-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.partners-logo-item {
+  width: 180px; /* Increased logo size for desktop */
+  height: auto;
+  opacity: 1;
+  transition: transform 0.3s ease;
+}
+
+.partners-logo-item:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .partners-container {
+    padding: 30px 20px;
+  }
+  .partners-logos {
+    gap: 20px;
+  }
+  .partners-heading {
+    font-size: 2rem;
+  }
+  .partners-logo-item {
+    width: 150px; /* Increased logo size for mobile */
+  }
+}

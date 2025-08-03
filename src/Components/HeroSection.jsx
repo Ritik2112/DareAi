@@ -1,7 +1,9 @@
-// src/HeroSection.jsx
 import React from 'react';
 import './HeroSection.css';
-import heroImage from '../assets/DareAi_hero_img.webp';
+import heroImage1 from '../assets/hero_image1.svg';
+import heroImage2 from '../assets/hero_image2.svg';
+import heroImage3 from '../assets/hero_image3.svg';
+import mobileHeroImage from '../assets/hero_image1.svg'; // Use one of your images as the static mobile image
 
 const HeroSection = () => {
   const handleScrollToSection = () => {
@@ -23,12 +25,22 @@ const HeroSection = () => {
         </button>
       </div>
 
-      <div className="hero-image-container">
-        <img
-          src={heroImage}
-          alt="DareAiSearch marketing illustration with a megaphone and social media icons"
-          className="hero-image"
-        />
+      {/* This single image will be shown only on smaller screens via CSS */}
+      <div className="hero-mobile-image-container">
+        <img src={mobileHeroImage} alt="DareAISearch" className="hero-mobile-image" />
+      </div>
+
+      {/* This image stack will be hidden on smaller screens via CSS */}
+      <div className="hero-images-stack">
+        <div className="hero-card card-yellow">
+          <img src={heroImage1} alt="AI Search" className="hero-image-card" />
+        </div>
+        <div className="hero-card card-blue">
+          <img src={heroImage2} alt="Data Analysis" className="hero-image-card" />
+        </div>
+        <div className="hero-card card-red">
+          <img src={heroImage3} alt="Growth" className="hero-image-card" />
+        </div>
       </div>
     </section>
   );

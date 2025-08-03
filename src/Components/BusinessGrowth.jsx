@@ -1,24 +1,44 @@
 // src/BusinessGrowth.jsx
-import React, { useState } from 'react';
+import React from 'react';
 import './BusinessGrowth.css';
-import DareAIImage from '../assets/DareAi1.webp'; // Import the image file
+import DareAIImage1 from '../assets/DareAi2.webp';
+import DareAIImage2 from '../assets/DareAi3.webp';
+import DareAIImage3 from '../assets/DareAi1.webp';
+ // Assuming you have other images
 
-const accordionData = [
+const featuresData = [
   {
     id: 1,
     title: 'AI Visibility Tracking',
-    content:
-      "We track your brand’s visibility across Google AI Overviews, ChatGPT, and Perplexity - measuring presence in the AI search results that influence customer decisions and convert to revenue.",
+    content: "We track your brand’s visibility across Google AI Overviews, ChatGPT, and Perplexity - measuring presence in the AI search results that influence customer decisions and convert to revenue.",
+    benefits: [
+      'Pinpoint your brand’s ranking on AI platforms',
+      'Optimize content for AI-powered searches',
+      'Track how AI recommendations drive traffic and revenue',
+    ],
+    image: DareAIImage1,
   },
   {
     id: 2,
     title: 'AI Competitive Intelligence',
-    content: 'We track your brand’s visibility across Google AI Overviews, ChatGPT, and Perplexity - measuring presence in the AI search results that influence customer decisions and convert to revenue.',
+    content: 'Understand your market position by analyzing competitor performance in generative search. We identify content gaps and opportunities to help you dominate the AI landscape.',
+    benefits: [
+      'Analyze competitor brand visibility on AI',
+      'Identify and close content gaps',
+      'Discover new opportunities for AI-driven growth',
+    ],
+    image: DareAIImage2, // Use a new image for this feature
   },
   {
     id: 3,
     title: 'Brand Reputation Intelligence',
-    content: 'We track your brand’s visibility across Google AI Overviews, ChatGPT, and Perplexity - measuring presence in the AI search results that influence customer decisions and convert to revenue.',
+    content: 'Monitor how your brand is perceived by AI platforms and in AI-generated content. Ensure your brand story is accurately and positively represented in the new search paradigm.',
+    benefits: [
+      'Monitor brand mentions in AI Overviews',
+      'Track brand sentiment and reputation across AI platforms',
+      'Protect your brand’s integrity in generative search',
+    ],
+    image: DareAIImage3, // Use a new image for this feature
   },
 ];
 
@@ -30,12 +50,6 @@ const BusinessGrowth = () => {
     }
   };
 
-  const [activeIndex, setActiveIndex] = useState(1);
-
-  const toggleAccordion = (index) => {
-    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
-  };
-
   return (
     <section className="business-growth-section">
       <h2 className="business-growth-heading">
@@ -43,40 +57,31 @@ const BusinessGrowth = () => {
         business growth
       </h2>
 
-      <div className="accordion-wrapper">
-        {accordionData.map(({ id, title, content }) => {
-          const isActive = activeIndex === id;
-          return (
-            <div
-              key={id}
-              className={`accordion-item ${isActive ? 'active' : ''} ${id === 1 ? 'yellow-bg' : ''}`}
-              onClick={() => toggleAccordion(id)}
-            >
-              <div className="accordion-header">
-                <span className="accordion-number">0{id}</span>
-                <span className="accordion-title">{title}</span>
-                <span className="accordion-icon">{isActive ? '−' : '+'}</span>
-              </div>
-              {/* Conditional rendering for the content and image */}
-              {isActive && (
-                <>
-                  <hr className="accordion-divider" />
-                  {/* The image is displayed here when the first item is active */}
-                  {id === 1 && (
-                    <div className="accordion-content-media">
-                        <img src={DareAIImage} alt="AI Visibility Tracking" className="accordion-content-image" />
-                    </div>
-                  )}
-                  <p className="accordion-content-text">{content}</p>
-                </>
-              )}
-            </div>
-          );
-        })}
-      </div>
+      {featuresData.map((feature, index) => (
+        <div 
+          key={feature.id} 
+          className={`feature-row ${index % 2 !== 0 ? 'reverse' : ''}`}
+        >
+          <div className="feature-item">
+            <h3>
+              <span className="feature-number">0{feature.id}</span>
+              <span className="feature-title">{feature.title}</span>
+            </h3>
+            <p>{feature.content}</p>
+            <ul>
+              
+            </ul>
+          </div>
+          <div className="feature-image-container">
+            <img src={feature.image} alt={feature.title} className="feature-image" />
+          </div>
+        </div>
+      ))}
 
       <div className="business-button-wrapper">
-        <button className="SStrategy-call-btn" onClick={handleScrollToSection}>Book your strategy call</button>
+        <button className="SStrategy-call-btn" onClick={handleScrollToSection}>
+          Book your strategy call
+        </button>
       </div>
     </section>
   );

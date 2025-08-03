@@ -13,6 +13,7 @@ import SpeedSearch from './Components/SpeedSearch';
 
 import FeatureSection from './Components/FeatureSection';
 import Newtestimonials from './Components/Newtestimonials';
+import WhyTrustUs from './Components/WhyTrustUs';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           <Navbar /> {/* Render your Navbar component here */}
       <HeroSection /> {/* Render your HeroSection component here */}
        
-   
+   <WhyTrustUs />
       
        
       

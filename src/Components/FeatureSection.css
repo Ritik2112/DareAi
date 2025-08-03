@@ -2,7 +2,7 @@
 :root {
   --color-primary-dark: #104041;
   --color-text-secondary: black;
-  --color-bg-main:  #ffffff;
+  --color-bg-main:  #ffffff;
   --color-bg-card-peach: #F3F3F3;
   --color-bg-card-white: #FFFFFF;
   --font-main: 'Space Grotesk', ;
@@ -23,7 +23,7 @@
 
   box-sizing: border-box;
   
- 
+  
 }
 
 
@@ -31,7 +31,7 @@
 .features-header {
   text-align: center;
   margin-bottom: 3.5rem;
- 
+  
   
 }
 
@@ -41,8 +41,8 @@
   color: var(--color-primary-dark);
   line-height: 1.25;
   margin: 0 0 1rem 0;
-   color: black;
-   font-family: 'Space Grotesk',;
+    color: black;
+    font-family: 'Space Grotesk',;
 }
 
 .features-header p {
@@ -71,7 +71,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Pushes text up */
- 
+  
 }
 .feature-card2 {
   border-radius: 40px;
@@ -210,7 +210,7 @@
 .insights-card {
   grid-column: 1 / -1; /* Makes this card span both columns */
   background-color: #F3F3F3;
- 
+  
 }
 
 
@@ -245,6 +245,12 @@
   .features-grid {
     grid-template-columns: 1fr; /* Stack all cards */
     gap: 1.5rem;
+  }
+  
+  /* Hide the image and illustration containers on smaller screens */
+  .card-illustration-corner,
+  .card-illustration-main {
+    display: none;
   }
 
   .insights-card {
@@ -320,5 +326,3 @@
   white-space: nowrap;
   background-color: #000;
 }
-
-
