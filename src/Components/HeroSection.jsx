@@ -1,9 +1,9 @@
 import React from 'react';
 import './HeroSection.css';
-import heroImage1 from '../assets/hero_image1.svg';
-import heroImage2 from '../assets/hero_image2.svg';
-import heroImage3 from '../assets/hero_image3.svg';
-import mobileHeroImage from '../assets/hero_image1.svg'; // Use one of your images as the static mobile image
+import heroImage1 from '../assets/hero_image3.png';
+import heroImage2 from '../assets/hero_image1.png';
+import heroImage3 from '../assets/hero_image2.png';
+import mobileHeroImage from '../assets/hero_image1.png'; // Use one of your images as the static mobile image
 
 const HeroSection = () => {
   const handleScrollToSection = () => {

@@ -1,9 +1,9 @@
 import React from 'react';
 import './WhyTrustUs.css';
 import googleLogo from '../assets/partner_img1.svg';
-import metaLogo from '../assets/partner_img7.svg';
+import metaLogo from '../assets/partner_img2.svg';
 import microsoftLogo from '../assets/partner_img3.svg';
-import semRushLogo from '../assets/partners_img6.svg';
+import semRushLogo from '../assets/partner_img4.svg';
 
 function WhyTrustUs() {
   const partnerLogos = [

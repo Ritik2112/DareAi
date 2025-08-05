@@ -19,7 +19,7 @@ const BookDemo = () => {
 
   return (
     <section className="book-demo-section">
-      <h2 className="book-demo-heading">Book Your Demo</h2>
+      <h2 className="book-demo-heading">Join the waitlist</h2>
       <div className="book-demo-wrapper">
         <form
           className="book-demo-form"

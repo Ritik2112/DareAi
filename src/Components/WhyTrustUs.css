@@ -1,8 +1,7 @@
-/* src/WhyTrustUs.css */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .why-trust-us-section {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Poppins';
   padding: 50px 40px;
   background-color: #ffffff;
   text-align: center;
@@ -11,12 +10,12 @@
 .partners-container {
   max-width: 1100px;
   margin: 0 auto;
-  background-color: #e4e159;
+  background-color: #ffffff;
   border-radius: 20px;
-  padding: -10px 20px;
- 
+  padding: 0px 20px;
 }
 
+/* Heading */
 .partners-heading {
   font-size: 2.5rem;
   font-weight: 600;
@@ -24,16 +23,19 @@
   margin-bottom: 30px;
 }
 
+/* Logos Wrapper */
 .partners-logos {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 60px;
+  flex-wrap: nowrap; /* Ensure logos stay in a row */
+  gap: 0;
 }
 
+/* Individual Logo */
 .partners-logo-item {
-  width: 180px; /* Increased logo size for desktop */
+  width: 22vw; /* Responsive width to fit 4 logos in one row */
+  max-width: 180px;
   height: auto;
   opacity: 1;
   transition: transform 0.3s ease;
@@ -43,17 +45,21 @@
   transform: scale(1.05);
 }
 
+/* Tablet and Smaller Screens */
 @media (max-width: 768px) {
-  .partners-container {
-    padding: 30px 20px;
-  }
-  .partners-logos {
-    gap: 20px;
-  }
   .partners-heading {
     font-size: 2rem;
   }
+
   .partners-logo-item {
-    width: 150px; /* Increased logo size for mobile */
+    width: 22vw; /* Still ensures 4 fit in 100vw */
+    max-width: none;
+  }
+}
+
+/* Extra Small Screens (e.g. ≤ 400px) */
+@media (max-width: 400px) {
+  .partners-logo-item {
+    width: 23vw;
   }
 }

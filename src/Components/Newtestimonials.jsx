@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import './Newtestimonials.css';
 
 // Import your local image file
-import partner3 from '../assets/partner3.webp';
+import partner3 from '../assets/partner33.png';
 import partner2 from '../assets/partner2.png';
 import partner1 from '../assets/partner1.png'; // Assuming you have a local image for partner1
 

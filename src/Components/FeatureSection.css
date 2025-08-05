@@ -5,7 +5,7 @@
   --color-bg-main:  #ffffff;
   --color-bg-card-peach: #F3F3F3;
   --color-bg-card-white: #FFFFFF;
-  --font-main: 'Space Grotesk', ;
+  --font-main: 'Poppins', ;
 }
 
 /* --- Main Section Wrapper --- */
@@ -16,7 +16,7 @@
   flex-direction: column;
   align-items: center;
   padding: 6rem 2rem;
-  margin: 40px auto;
+  margin: 10px auto;
   justify-content: center;
   min-height: 85vh;
   padding: 10px 40px ;
@@ -30,7 +30,8 @@
 /* --- Section Header --- */
 .features-header {
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
+
   
   
 }
@@ -76,7 +77,7 @@
 .feature-card2 {
   border-radius: 40px;
   padding: 2.5rem;
-  box-shadow: 0px 6px 0px 0px #FAE400;
+  box-shadow: 0px 6px 0px 0px #000000;
   position: relative;
   overflow: hidden; /* Important for corner illustrations */
   display: flex;
@@ -116,7 +117,7 @@
 
 .card-content2 p {
   font-size: 1rem;
-  color: white;
+  color: rgb(0, 0, 0);
   line-height: 1.2;
   margin: 0;
   max-width: 230px; /* Constrain text width */
@@ -200,7 +201,7 @@
   background-color: #FAE400;
 }
 .Revenue{
-    background-color: #000;
+    background-color: #FAE400;
 }
 .Traditional{
     background-color: #ffffff;
@@ -241,88 +242,77 @@
 
 
 /* --- Responsive Design --- */
+/* --- Responsive Design for Tablets and Below --- */
 @media (max-width: 992px) {
   .features-grid {
-    grid-template-columns: 1fr; /* Stack all cards */
+    grid-template-columns: 1fr; /* stack all cards */
     gap: 1.5rem;
   }
-  
-  /* Hide the image and illustration containers on smaller screens */
+
+  /* hide images and illustrations on small screens */
   .card-illustration-corner,
   .card-illustration-main {
     display: none;
   }
 
+  .feature-card,
+  .feature-card2,
   .insights-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 2.5rem; /* Reset padding for stacked view */
+    padding: 2rem;
   }
 
-  .insights-card .card-content {
-    flex-basis: auto;
-    padding-right: 0;
-    margin-bottom: 2rem;
-  }
-  
-  .insights-card .card-content p {
-    margin: 0 auto; /* Center the text block */
+  .card-content,
+  .card-content2,
+  .cardcare-content,
+  .cardinsight-content {
+    text-align: left;
+    max-width: 100%; /* let text use full space */
   }
 
-  .card-illustration-main {
-    align-self: center;
-    margin-top: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .features-section {
-    padding: 4rem 1.5rem;
+  .card-content p,
+  .card-content2 p,
+  .cardcare-content p,
+  .cardinsight-content p {
+    max-width: 100%; /* remove width constraint on smaller screens */
   }
 
   .features-header h2 {
-    font-size: 2.2rem;
+    font-size: 2rem; /* scale down main heading */
   }
 
   .features-header p {
     font-size: 1rem;
   }
+}
 
-  .feature-card {
-    padding: 2rem;
+@media (max-width: 576px) {
+  .features-section {
+    padding: 2rem 1rem;
   }
 
-  .card-content h3 {
-    font-size: 1.7rem;
+  .features-header h2 {
+    font-size: 1.6rem; /* further scale down on very small screens */
   }
 
-  .card-illustration-main img {
-    max-width: 220px;
+  .feature-card,
+  .feature-card2,
+  .insights-card {
+    padding: 1.5rem;
+  }
+
+  .card-content h3,
+  .card-content2 h3,
+  .cardcare-content h3,
+  .cardinsight-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .card-content p,
+  .card-content2 p,
+  .cardcare-content p,
+  .cardinsight-content p {
+    font-size: 0.95rem;
+    line-height: 1.4;
   }
 }
 
-.card-content,
-.cardcare-content,
-.cardinsight-content {
-  position: relative; /* This is crucial for z-index to work */
-  z-index: 2; 
-}
-
-/* --- Button Styling --- */
-.better-workplace-buttons {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 0.8rem;
-  
-}
-.better-workplace-button {
-  padding: 14px 30px;
-  border: none;
-  border-radius: 0.75rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  background-color: #000;
-}

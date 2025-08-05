@@ -53,7 +53,7 @@ const BusinessGrowth = () => {
   return (
     <section className="business-growth-section">
       <h2 className="business-growth-heading">
-        Engineered for <span>AI</span>. Tailored to your <br />
+        Engineered for AI. Tailored to your <br />
         business growth
       </h2>
 

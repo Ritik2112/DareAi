@@ -9,8 +9,7 @@ function SpeedSearch() {
   return (
     <section className="speed-search-container">
       <h2 className="speed-search-heading">
-        But is your company prepared to <br />
-        <span>adapt to the speed of AI search?</span>
+        But is your company prepared to <br></br>adapt to the speed of AI search?
       </h2>
 
       <div className="speed-search-cards">
@@ -29,7 +28,7 @@ function SpeedSearch() {
       </div>
 
       <h2 className="unified-heading">
-        We empower your brand with a <span>unified search strategy</span>
+        We empower your brand with a unified search strategy
       </h2>
 
       <div className="venn-diagram">

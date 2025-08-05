@@ -92,26 +92,6 @@ function FeatureSection() {
 
        
 
-        {/* Card 3: Insights & HR Dashboard */}
-        <div className="feature-card insights-card">
-          <div className="cardinsight-content">
-            <h3>Let’s make things happen</h3>
-            <p>
-              Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.
-            </p>
-             <div className="better-workplace-buttons">
-            <button className="better-workplace-button primary" onClick={handleScrollToSection}>
-              Get Started For Your Team
-            </button>
-          </div>
-          </div>
-          <div className="card-illustration-main">
-            <img
-              src={ThingsHappen}
-              alt="Woman looking at a dashboard reflection"
-            />
-          </div>
-        </div>
       </div>
     </section>
   );
