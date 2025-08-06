@@ -2,10 +2,10 @@
 :root {
   --color-primary-dark: #104041;
   --color-text-secondary: black;
-  --color-bg-main:  #ffffff;
+  --color-bg-main: #ffffff;
   --color-bg-card-peach: #F3F3F3;
   --color-bg-card-white: #FFFFFF;
-  --font-main: 'Poppins', ;
+  --font-main: 'Poppins', sans-serif;
 }
 
 /* --- Main Section Wrapper --- */
@@ -15,25 +15,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 6rem 2rem;
-  margin: 10px auto;
+  /* Removed min-height to allow section to size to its content */
+  /* Removed margin to prevent extra spacing between sections */
   justify-content: center;
-  min-height: 85vh;
-  padding: 10px 40px ;
-
+  
+  /* Use padding for internal spacing */
+  padding: 6rem 2rem; 
   box-sizing: border-box;
-  
-  
 }
-
 
 /* --- Section Header --- */
 .features-header {
   text-align: center;
   margin-bottom: 3rem;
-
-  
-  
 }
 
 .features-header h2 {
@@ -42,8 +36,8 @@
   color: var(--color-primary-dark);
   line-height: 1.25;
   margin: 0 0 1rem 0;
-    color: black;
-    font-family: 'Space Grotesk',;
+  color: black;
+  font-family: 'Space Grotesk',;
 }
 
 .features-header p {
@@ -68,22 +62,20 @@
   padding: 2.5rem;
   box-shadow: 0px 6px 0px 0px #000;
   position: relative;
-  overflow: hidden; /* Important for corner illustrations */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Pushes text up */
-  
+  justify-content: space-between;
 }
 .feature-card2 {
   border-radius: 40px;
   padding: 2.5rem;
   box-shadow: 0px 6px 0px 0px #000000;
   position: relative;
-  overflow: hidden; /* Important for corner illustrations */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Pushes text up */
-  
+  justify-content: space-between;
 }
 
 .card-content h3 {
@@ -104,13 +96,12 @@
   text-align: left;
 }
 
-
 .card-content p {
   font-size: 1rem;
   color: var(--color-text-secondary);
   line-height: 1.2;
   margin: 0;
-  max-width: 230px; /* Constrain text width */
+  max-width: 230px;
   text-align: left;
   font-weight: 500;
 }
@@ -120,13 +111,13 @@
   color: rgb(0, 0, 0);
   line-height: 1.2;
   margin: 0;
-  max-width: 230px; /* Constrain text width */
+  max-width: 230px;
   text-align: left;
   font-weight: 500;
-
 }
+
 .highlight-text {
-  background-color: yellow; /* or #fff59d for a softer tone */
+  background-color: yellow;
   padding: 4px 12px;
   border-radius: 0.75rem;
   display: inline-block;
@@ -134,14 +125,14 @@
 }
 
 .highlight-text2 {
-  background-color: #FFFFFF; /* or #fff59d for a softer tone */
+  background-color: #FFFFFF;
   padding: 4px 12px;
   border-radius: 0.75rem;
   display: inline-block;
   line-height: 1;
 }
 .highlight-text3 {
-  background-color: #FFFFFF; /* or #fff59d for a softer tone */
+  background-color: #FFFFFF;
   padding: 4px 12px;
   border-radius: 0.75rem;
   display: inline-block;
@@ -149,7 +140,7 @@
 }
 
 .highlight-text4 {
-  background-color: #FAE400; /* or #fff59d for a softer tone */
+  background-color: #FAE400;
   padding: 4px 12px;
   border-radius: 0.75rem;
   display: inline-block;
@@ -169,7 +160,7 @@
   color: var(--color-text-secondary);
   line-height: 1.6;
   margin: 0;
-  max-width: 450px; /* Constrain text width */
+  max-width: 450px;
   text-align: left;
 }
 
@@ -186,35 +177,26 @@
   color: var(--color-text-secondary);
   line-height: 1.6;
   margin: 0;
-  max-width: 700px; /* Constrain text width */
+  max-width: 700px;
   text-align: left;
 }
 
-
-
 /* --- Specific Card Styles --- */
 .Ai_Driven{
-  background-color: var(--color-bg-card-peach);
+  background-color: #ffffff;
+  border: 1px solid #000;
 }
 
 .Zero-click {
   background-color: #FAE400;
 }
 .Revenue{
-    background-color: #FAE400;
+  background-color: #FAE400;
 }
 .Traditional{
-    background-color: #ffffff;
-    border: 1px solid #000;
+  background-color: #ffffff;
+  border: 1px solid #000;
 }
-
-.insights-card {
-  grid-column: 1 / -1; /* Makes this card span both columns */
-  background-color: #F3F3F3;
-  
-}
-
-
 
 /* --- Card Illustrations --- */
 .card-illustration-corner {
@@ -225,13 +207,10 @@
   height: auto;
   pointer-events: none;
   z-index: 1;
-  
 }
 
-
-
 .card-illustration-main img {
- position: absolute;
+  position: absolute;
   bottom: 0rem;
   right:0rem;
   width: 300px;
@@ -240,16 +219,13 @@
   z-index: 1;
 }
 
-
 /* --- Responsive Design --- */
-/* --- Responsive Design for Tablets and Below --- */
 @media (max-width: 992px) {
   .features-grid {
-    grid-template-columns: 1fr; /* stack all cards */
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-
-  /* hide images and illustrations on small screens */
+  
   .card-illustration-corner,
   .card-illustration-main {
     display: none;
@@ -260,24 +236,24 @@
   .insights-card {
     padding: 2rem;
   }
-
+  
   .card-content,
   .card-content2,
   .cardcare-content,
   .cardinsight-content {
     text-align: left;
-    max-width: 100%; /* let text use full space */
+    max-width: 100%;
   }
-
+  
   .card-content p,
   .card-content2 p,
   .cardcare-content p,
   .cardinsight-content p {
-    max-width: 100%; /* remove width constraint on smaller screens */
+    max-width: 100%;
   }
 
   .features-header h2 {
-    font-size: 2rem; /* scale down main heading */
+    font-size: 2rem;
   }
 
   .features-header p {
@@ -291,7 +267,7 @@
   }
 
   .features-header h2 {
-    font-size: 1.6rem; /* further scale down on very small screens */
+    font-size: 1.6rem;
   }
 
   .feature-card,
@@ -315,4 +291,18 @@
     line-height: 1.4;
   }
 }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
 

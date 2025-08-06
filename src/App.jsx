@@ -3,14 +3,15 @@ import React from 'react';
 import Navbar from './Components/Navbar';
 import HeroSection from './Components/HeroSection';
 import BookDemo from './Components/BookDemo';
-import BusinessGrowth from './Components/BusinessGrowth';
+import NewSection from './Components/NewSection';
 import AdvantageSection from './Components/AdvantageSection';
 import SpeedSearch from './Components/SpeedSearch';
 import FeatureSection from './Components/FeatureSection';
-import Newtestimonials from './Components/Newtestimonials';
+import StaticTestimonials from './Components/StaticTestimonials.jsx';
 import WhyTrustUs from './Components/WhyTrustUs';
 import ScrollAnimation from './Components/ScrollAnimation'; // <-- Import the animation wrapper
 import './App.css';
+import Geo from './Components/Geo'; // Import the Geo component
 
 function App() {
   return (
@@ -23,24 +24,23 @@ function App() {
         </ScrollAnimation>
 
         <ScrollAnimation>
-          <WhyTrustUs />
+          <FeatureSection />
         </ScrollAnimation>
 
-        <section id="Why-DareAi">
-          <ScrollAnimation>
-            <FeatureSection />
-          </ScrollAnimation>
-        </section>
+        <ScrollAnimation>
+          <SpeedSearch />
+        </ScrollAnimation>
 
-        <section id="What-is-geo">
-          <ScrollAnimation>
-            <SpeedSearch />
-          </ScrollAnimation>
-        </section>
+   <ScrollAnimation>
+          <Geo />
+        </ScrollAnimation>
+
+     
+       
 
         <section id="benefits">
           <ScrollAnimation>
-            <BusinessGrowth />
+            <NewSection />
           </ScrollAnimation>
         </section>
 
@@ -52,7 +52,8 @@ function App() {
 
         <section id="reviews">
           <ScrollAnimation>
-            <Newtestimonials />
+                  <StaticTestimonials />
+
           </ScrollAnimation>
         </section>
 
@@ -61,6 +62,8 @@ function App() {
             <BookDemo />
           </ScrollAnimation>
         </section>
+        <WhyTrustUs />
+
       </main>
     </div>
   );

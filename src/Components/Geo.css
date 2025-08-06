@@ -1,0 +1,208 @@
+.geo-seo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Aligns content to the top */
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  min-height: auto; /* Changed from 100vh to auto to remove extra space */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* --- NEW HEADING STYLES --- */
+.main-heading {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* --- RESPONSIVE DIAGRAM CONTAINER --- */
+.venn-diagram {
+  position: relative;
+  max-width: 1050px;
+  width: 95vw;
+  aspect-ratio: 1050 / 600;
+  display: flex;
+  justify-content: center;
+}
+
+/* --- RESPONSIVE CIRCLES --- */
+.circle {
+  position: absolute;
+  width: 62%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.geo-circle {
+  background-color: #222b86;
+  left: 0;
+  top: 0;
+  justify-content: flex-start;
+  padding-left: 7%;
+}
+
+.seo-circle {
+  background-color: #fae400;
+  right: 0;
+  top: 0;
+  justify-content: flex-end;
+  padding-right: 7%;
+}
+
+/* --- RESPONSIVE CONTENT BLOCKS --- */
+.content-block {
+  text-align: left;
+  max-width: 90%;
+}
+
+.content-block1 {
+  text-align: center;
+  display: inline;
+  color: white;
+  font-size: clamp(12px, 2vw, 18px);
+  line-height: 1.5;
+}
+
+.content-block1 ul, .content-block ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* --- RESPONSIVE TYPOGRAPHY --- */
+.content-block h2 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  margin-bottom: clamp(15px, 5%, 50px);
+  margin-top: clamp(-10px, -3%, -30px);
+}
+
+.content-block li {
+  display: flex;
+  margin-bottom: clamp(5px, 1.5vh, 10px);
+  font-size: clamp(0.75rem, 2vw, 1.1rem);
+}
+
+.checkmark {
+  font-weight: bold;
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  margin-right: clamp(8px, 2vw, 15px);
+  flex-shrink: 0;
+}
+
+.checkmark.dark {
+  color: black;
+}
+
+/* --- OVERLAP & Z-INDEX --- */
+.overlap-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  color: white;
+  width: 30%;
+}
+
+.overlap-content .content-block1 ul {
+  display: inline-block;
+  text-align: center;
+  line-height: 2;
+}
+
+/* --- ANIMATION STYLES --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-block li, .content-block1 li {
+  opacity: 0;
+  transform: translateY(20px);
+  animation-fill-mode: forwards;
+}
+
+.is-visible .content-block li, .is-visible .content-block1 li {
+  animation-name: fadeInUp;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-out;
+}
+
+.is-visible ul li:nth-child(1) { animation-delay: 0.1s; }
+.is-visible ul li:nth-child(2) { animation-delay: 0.2s; }
+.is-visible ul li:nth-child(3) { animation-delay: 0.3s; }
+.is-visible ul li:nth-child(4) { animation-delay: 0.4s; }
+.is-visible ul li:nth-child(5) { animation-delay: 0.5s; }
+
+
+/* --- MEDIA QUERIES FOR SMALL MOBILE SCREENS --- */
+@media (max-width: 480px) {
+  .geo-seo-container {
+    padding: 10px;
+  }
+  
+  .venn-diagram {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: auto;
+  }
+  
+  .circle {
+    position: static;
+    width: 90%;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    opacity: 1;
+  }
+  
+  .geo-circle, .seo-circle {
+    left: auto;
+    right: auto;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .seo-circle {
+    background-color: #fae400;
+    color: black;
+  }
+
+  .overlap-content {
+    display: none;
+  }
+  
+  .content-block h2 {
+    margin-bottom: 10px;
+  }
+  .content-block li {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left;
+  }
+  
+  .checkmark.dark {
+    color: black;
+  }
+}

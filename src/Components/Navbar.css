@@ -5,27 +5,24 @@
   display: flex; /* Use flexbox for alignment */
   justify-content: space-between; /* Distribute items with space between them */
   align-items: center; /* Vertically center items */
-  padding: 1rem 3rem; /* Add some padding around the navbar */
+  padding: 0.25rem 1.2rem; /* Even less vertical and horizontal padding */
   background-color: rgb(255, 255, 255); /* Updated background color */
-
   font-family: 'Geomanist',;
- 
   position: relative; /* Needed for absolute positioning of mobile menu */
   z-index: 1000; /* Ensure navbar is above the sliding menu when closed */
-  
-  border-radius: 40px;
-    width: 100%;
-
+  border-radius: 10px; /* Even smaller border radius */
+  width: 92vw; /* Make navbar width a bit smaller than full width */
+  max-width: 1200px; /* Prevent it from being too wide on large screens */
+  margin: 0 auto; /* Center the navbar horizontally */
   top: 0;
-
   box-sizing: border-box;
-  }
+}
 
 /* Styling for the brand/logo on the left */
 .navbar-brand {
   font-size: 1.5rem; /* Larger font size for the brand name */
   font-weight: bold; /* Make it bold */
-  color: #333; /* Dark grey color */
+  color: #000000; /* Dark grey color */
   padding: 0.5rem 1rem; /* Padding around the brand text */
   border-radius: 0.375rem; /* Slightly rounded corners for the brand */
 }
@@ -37,17 +34,18 @@
   padding: 0; /* Remove default padding */
   display: flex; /* Use flexbox for horizontal alignment of links */
   gap: 1.5rem; /* Space between each link item */
+  
 }
 
 /* Styling for individual list items */
 .navbar-links li {
-  /* No specific styling needed here, as styling is on the anchor tag */
+
 }
 
 /* Styling for the navigation links (anchor tags) */
 .navbar-links a {
   text-decoration: none; /* Remove underline from links */
-  color: #555; /* Medium grey color for links */
+  color: #000000; /* Medium grey color for links */
   font-weight: 500; /* Medium font weight */
   padding: 0.5rem 0.75rem; /* Padding around the link text */
   transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
@@ -92,7 +90,7 @@
     flex-direction: row; /* Keep brand and toggle on one row */
     justify-content: space-between; /* Space between brand and toggle */
     align-items: center;
-    padding: 1rem;
+    padding: 0.25rem 0.7rem; /* Even less padding for mobile */
   }
 
   .menu-toggle {

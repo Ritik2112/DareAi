@@ -29,7 +29,7 @@ const Navbar = () => {
     <nav className="navbar">
       {/* Left section: Brand name or logo */}
       <div className="navbar-brand">
-        DAREAISEARCH
+        DareAISearch
       </div>
 
       {/* Hamburger icon for mobile view */}

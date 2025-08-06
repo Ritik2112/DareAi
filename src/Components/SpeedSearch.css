@@ -1,69 +1,85 @@
-.speed-search-container {
+/* src/SpeedSearch.css */
+.athena-ai-section {
   text-align: center;
-  padding: 80px 40px;
-  background-color: #fff;
+  padding: 80px 20px;
+  background-color: #ffffff; /* White background for the section */
+  font-family: 'Inter', sans-serif; /* Using Inter font as per instructions */
 }
 
-.speed-search-heading {
-  font-size: 50px;
+.athena-ai-heading {
+  font-size: 2.5rem;
   font-weight: 700;
-  line-height: 1.4;
-  color: #111;
-  margin-bottom: 50px;
+  color: #333;
+  margin-bottom: 3rem;
+  line-height: 1.2;
 }
 
-.speed-search-heading span {
-  font-weight: 600;
-}
-
-.speed-search-cards {
+.athena-ai-cards-container {
   display: flex;
   justify-content: center;
-  gap: 60px;
-  background-color: #000;
-  padding: 30px 5px;
-  border-radius: 18px;
-  max-width: 1150px;
-  margin: 0 auto 60px auto;
-  flex-wrap: wrap;
+  gap: 30px; /* Space between cards */
+  flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.speed-search-card {
+.athena-ai-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow */
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #fff;
-  width: 250px;
   text-align: center;
+  width: calc(33.33% - 20px); /* Three columns by default (desktop and tablet) */
+  min-width: 280px; /* Minimum width for cards before wrapping */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
-.speed-search-card img {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 15px;
+.athena-ai-icon-circle {
+  background-color: #e6f0ff; /* Light blue background for the circle */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #007bff; /* Blue color for the icon */
 }
 
-.speed-search-card p {
-  font-size: 18px;
-  font-weight: 500;
+.athena-ai-illustration {
+  width: 100%; /* Make the image fill the circle */
+  height: 100%; /* Make the image fill the circle */
+  object-fit: contain; /* Ensure the image fits within the circle without cropping */
+  border-radius: 50%; /* Keep the image itself circular if it's not already */
+}
+
+.athena-ai-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
   line-height: 1.4;
 }
 
-.unified-heading {
-  font-size: 50px;
-  margin-bottom: 30px;
-  margin-top: 120px;
-  color: #111;
+.athena-ai-card-description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
 }
 
-.unified-heading span {
-  font-weight: 600;
-}
-
-.venn-diagram img {
-  max-width: 1100px;
-  width: 100%;
-  height: 530px;
-  display: block;
-  margin: 0 auto;
+/* Responsive adjustments */
+/* For screens smaller than 768px (e.g., mobile devices), stack cards */
+@media (max-width: 768px) {
+  .athena-ai-card {
+    width: 90%; /* Single column on small screens */
+  }
+  .athena-ai-cards-container {
+    gap: 20px;
+  }
+  .athena-ai-heading {
+    font-size: 2rem;
+  }
 }
