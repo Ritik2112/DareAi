@@ -1,225 +1,175 @@
-/* General container and layout styling */
-.new-section-container {
-  background-color: #f0f7fd; /* Match light blue background from image */
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  padding: 4rem;
+/* Main section container */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.ai-tabs-section {
+  background-color: #f6f6f6;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 30px; /* Added horizontal padding for smaller screens */
   text-align: left;
+  overflow-x: hidden; /* Prevents horizontal scroll */
+  border-radius: 40px;
 }
 
-/* Responsive padding adjustments */
-@media (max-width: 1024px) {
-  .new-section-container {
-    padding: 3rem;
-  }
-}
-@media (max-width: 768px) {
-  .new-section-container {
-    padding: 2rem;
-  }
-}
-@media (max-width: 640px) {
-  .new-section-container {
-    padding: 1rem;
-  }
-}
-
-.new-section-content {
-  max-width: 1280px;
+/* Inner content wrapper for max-width */
+.ai-tabs-section__content {
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
 /* Typography */
-.main-heading {
-  font-size: 3rem;
+.ai-tabs-section__heading {
+  font-size: 50px;
   font-weight: 700;
   color: #1f2937;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
-@media (max-width: 768px) {
-  .main-heading {
-    font-size: 2.25rem;
-  }
-}
-
-.sub-heading {
+.ai-tabs-section__subheading {
   font-size: 1.875rem;
   font-weight: 700;
   color: #1f2937;
   margin-bottom: 1.5rem;
 }
 
-/* Tabs Navigation (Numbered Buttons) */
-.tabs-nav {
+/* Tabs Navigation */
+.ai-tabs-section__nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 3rem;
+  gap: 1rem;
+  margin: 2rem 0 3rem 0;
+  justify-content: start;
 }
 
-.tab-button {
-  width: 3rem;
-  height: 3rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #3b82f6;
+.ai-tabs-section__tab {
+  width: 48px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
   background-color: white;
-  border: 2px solid #3b82f6;
-  border-radius: 9999px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
 }
 
-.tab-button:hover {
-  background-color: #e0efff;
-  border-color: #2563eb;
+.ai-tabs-section__tab:hover {
+  background-color: #fae400;
+  border-color: #fae400;
 }
 
-.tab-button.active {
-  background-color: #3b82f6;
-  color: white;
+.ai-tabs-section__tab--active {
+  background-color: #fae400;
+  color: rgb(0, 0, 0);
+  border-color: black;
+  transform: scale(1.1);
 }
 
-.tab-button:focus {
+.ai-tabs-section__tab:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
 }
 
-/* Main Content Grid */
-.content-grid {
+/* Content Layout Grid */
+.ai-tabs-section__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
   align-items: center;
 }
 
-@media (min-width: 1024px) {
-  .content-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.text-content {
+/* The two columns in the grid */
+.ai-tabs-section__text-col {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* Feature List Styling */
-.feature-list {
+.ai-tabs-section__image-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Feature List */
+.ai-tabs-section__feature-list {
   list-style: none;
   padding: 0;
-  margin-bottom: 2rem;
+  margin: 0;
 }
 
-.feature-item {
+.ai-tabs-section__feature-item {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 1rem;
+  margin-bottom: 8rem;
 }
 
-.icon-wrapper {
-  flex-shrink: 0;
-  margin-right: 0.75rem;
-  margin-top: 0.25rem;
-}
-
-.check-icon {
-  height: 1.5rem;
-  width: 1.5rem;
-  color: #22c55e;
-  background-color: #dcfce7;
-  border-radius: 9999px;
-  padding: 0.25rem;
-}
-
-.feature-text {
+.ai-tabs-section__feature-text {
   color: #4b5563;
   font-size: 1.125rem;
   line-height: 1.75rem;
-}
-
-/* Button Styling */
-.button-container {
-  margin-top: 1rem;
-}
-
-.learn-more-button {
-  background-color: #2563eb;
-  color: white;
-  font-weight: 700;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
-              0 2px 4px -2px rgb(0 0 0 / 0.1);
-  transition: all 0.3s ease-in-out;
-}
-
-.learn-more-button:hover {
-  background-color: #1d4ed8;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-              0 4px 6px -4px rgb(0 0 0 / 0.1);
-}
-
-.learn-more-button:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+  text-align: justify;
 }
 
 /* Image Styling */
-.image-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.dashboard-image {
+.ai-tabs-section__image {
   border-radius: 0.75rem;
-  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   width: 100%;
-  max-width: 48rem;
   height: auto;
+  object-fit: cover;
+  
 }
 
-/* App container for demonstration */
-.app-container {
-  min-height: 100vh;
-  background-color: white;
+
+/* --- RESPONSIVE STYLES --- */
+
+/* Desktop Layout */
+@media (min-width: 1024px) {
+  .ai-tabs-section__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.tabs-nav {
-  display: flex;
-  gap: 1rem;
-  margin: 2rem 0;
-  justify-content: start;
-}
+/* Tablet and Mobile Layout */
+@media (max-width: 768px) {
+  .ai-tabs-section {
+    padding: 3rem 0rem;
+    margin-bottom: 60px;
+  }
+  
+  .ai-tabs-section__heading {
+    font-size: 1.8rem;
+    text-align: center;
+  }
 
-.tab-circle {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  background-color: white;
-  color: #333;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  .ai-tabs-section__subheading {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .ai-tabs-section__nav {
+    justify-content: center;
+  }
 
-.tab-circle.active {
-  background-color: #1e40af; /* Dark blue */
-  color: white;
-  border-color: #1e40af;
-  transform: scale(1.1);
+  .ai-tabs-section__feature-text {
+    font-size: 1rem;
+    text-align: center;
+    
+  }
+
+  .ai-tabs-section__feature-item{
+     margin-bottom: 0rem;
+  }
+  
+  .ai-tabs-section__text-col {
+    order: 2; /* Text appears below image on mobile */
+  }
+  
+  .ai-tabs-section__image-col {
+    order: 1;
+  }
 }

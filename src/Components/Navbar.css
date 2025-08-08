@@ -1,30 +1,36 @@
 /* src/Navbar.css */
 
 /* Basic styling for the entire navbar */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .navbar {
   display: flex; /* Use flexbox for alignment */
   justify-content: space-between; /* Distribute items with space between them */
   align-items: center; /* Vertically center items */
-  padding: 0.25rem 1.2rem; /* Even less vertical and horizontal padding */
+  padding: 0px 30px; /* Even less vertical and horizontal padding */
   background-color: rgb(255, 255, 255); /* Updated background color */
-  font-family: 'Geomanist',;
+  font-family: 'Poppins';
   position: relative; /* Needed for absolute positioning of mobile menu */
   z-index: 1000; /* Ensure navbar is above the sliding menu when closed */
   border-radius: 10px; /* Even smaller border radius */
   width: 92vw; /* Make navbar width a bit smaller than full width */
   max-width: 1200px; /* Prevent it from being too wide on large screens */
-  margin: 0 auto; /* Center the navbar horizontally */
+margin-top: -30px;
+padding: 1px;
   top: 0;
   box-sizing: border-box;
+  
 }
 
 /* Styling for the brand/logo on the left */
 .navbar-brand {
-  font-size: 1.5rem; /* Larger font size for the brand name */
-  font-weight: bold; /* Make it bold */
-  color: #000000; /* Dark grey color */
-  padding: 0.5rem 1rem; /* Padding around the brand text */
-  border-radius: 0.375rem; /* Slightly rounded corners for the brand */
+  padding: 0.5rem 1rem;
+  /* Removed text-specific styles like font-size and font-weight */
+}
+
+/* Styling for the logo image */
+.navbar-logo {
+  height: 80px; /* Adjust the height of the logo as needed */
+  max-height: 80px; /* Ensure the logo doesn't get too large */
 }
 
 /* Styling for the list of navigation links (desktop view) */
@@ -34,13 +40,9 @@
   padding: 0; /* Remove default padding */
   display: flex; /* Use flexbox for horizontal alignment of links */
   gap: 1.5rem; /* Space between each link item */
-  
 }
 
-/* Styling for individual list items */
-.navbar-links li {
 
-}
 
 /* Styling for the navigation links (anchor tags) */
 .navbar-links a {
@@ -135,27 +137,26 @@
 }
 
 /* Adjustments for desktop view to ensure mobile styles don't interfere */
-@media (min-width: 769px) {
-  .navbar-links {
-    /* Reset mobile styles for desktop */
-    position: static; /* Back to normal document flow */
-    height: auto;
-    width: auto;
-    max-width: none;
-    padding: 0;
-    box-shadow: none;
-    transition: none;
-    z-index: auto;
-    overflow-y: visible;
+@media (max-width: 768px) {
+  .navbar {
     flex-direction: row;
-    display: flex; /* Ensure it's always visible on desktop */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0;
+    width: 100%; /* Full width for mobile */
+   
   }
 
-  .navbar-links.open {
-    right: auto; /* Reset right property */
+  .navbar-brand {
+    padding-left: 0; /* Remove any extra padding on logo */
+    margin-left: 0;  /* Align it to the left edge */
   }
 
-  .menu-toggle {
-    display: none; /* Hide hamburger on desktop */
+  .navbar-logo {
+    margin-left: 0;
+    padding-left: 0;
+    display: block; /* Ensure it's treated as a block element */
+    height: auto;
+    width: 130px;
   }
 }

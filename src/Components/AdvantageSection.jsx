@@ -45,7 +45,7 @@ export default function AdvantageSection() {
 
   return (
     <section className="advantage-section">
-      <h2 className="advantage-title">
+      <h2 className="advantage-subheading">
         The <span>DareAISearch</span> Advantage
       </h2>
 

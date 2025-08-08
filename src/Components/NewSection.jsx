@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import './NewSection.css';
+import './NewSection.css'; // Your CSS file
 
 import DareAIImage1 from '../assets/DareAi2.webp';
 import DareAIImage2 from '../assets/DareAi3.webp';
@@ -9,68 +9,27 @@ import DareAIImage3 from '../assets/DareAi1.webp';
 
 const tabData = {
   1: {
-    title: 'Empower strategic decisions with actionable intelligence',
+    title: 'AI Visibility Tracking',
     features: [
-      'Stay updated on critical developments across your competitive and industry landscape.',
-      'Identify emerging competitors early by tracking mentions in sales calls, news, and forums and take timely actions.',
-      'Monitor industry M&As and partnerships to uncover potential strategic alliances.',
+      'We track your brand’s visibility across Google AI Overviews, ChatGPT, and Perplexity - measuring presence in the AI search results that influence customer decisions and convert to revenue.',
     ],
     image: DareAIImage1,
   },
   2: {
-    title: 'Build better products with market-driven insights',
+    title: 'AI Competitive Intelligence',
     features: [
-      'Analyze user feedback at scale to prioritize your roadmap.',
-      'Track competitor product launches and feature updates in real-time.',
-      'Identify gaps in the market and validate new product ideas.',
+      'Understand your market position by analyzing competitor performance in generative search. We identify content gaps and opportunities to help you dominate the AI landscape.',
     ],
     image: DareAIImage2,
   },
   3: {
-    title: 'Optimize marketing campaigns with competitive data',
+    title: 'Brand Reputation Intelligence',
     features: [
-      'Understand competitor messaging, positioning, and content strategies.',
-      'Discover new marketing channels and tactics that are working for others.',
-      'Measure your campaign performance against industry benchmarks.',
+      'Monitor how your brand is perceived by AI platforms and in AI-generated content. Ensure your brand story is accurately and positively represented in the new search paradigm.',
     ],
     image: DareAIImage3,
   },
-  4: {
-    title: 'Win more deals with tailored sales strategies',
-    features: [
-      'Get timely alerts on competitor pricing changes and promotions.',
-      'Craft compelling battle cards with up-to-date competitive intelligence.',
-      'Identify key decision-makers and their priorities.',
-    ],
-    image: DareAIImage2,
-  },
-  5: {
-    title: 'Centralize Market & Competitive Intelligence',
-    features: [
-      'Automate the collection of data from millions of sources.',
-      'Collaborate with your team to analyze trends and generate reports.',
-      'Distribute actionable insights to stakeholders across the organization.',
-    ],
-    image: DareAIImage1,
-  },
 };
-
-const CheckIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="check-icon"
-  >
-    <path d="M20 6 9 17l-5-5" />
-  </svg>
-);
 
 const NewSection = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -82,20 +41,22 @@ const NewSection = () => {
   });
 
   return (
-    <div className="new-section-container" ref={ref}>
-      <div className="new-section-content">
-        <h1 className="main-heading">
+    <div className="ai-tabs-section" ref={ref}>
+      <div className="ai-tabs-section__content">
+        <h1 className="ai-tabs-section__heading">
           Engineered for AI. Tailored to your <br />
           business growth
         </h1>
 
         {/* Tabs */}
-        <div className="tabs-nav">
+        <div className="ai-tabs-section__nav">
           {Object.keys(tabData).map((key) => (
             <button
               key={key}
               onClick={() => setActiveTab(Number(key))}
-              className={`tab-circle ${activeTab === Number(key) ? 'active' : ''}`}
+              className={`ai-tabs-section__tab ${
+                activeTab === Number(key) ? 'ai-tabs-section__tab--active' : ''
+              }`}
             >
               {key}
             </button>
@@ -103,25 +64,22 @@ const NewSection = () => {
         </div>
 
         {/* Content Grid with AnimatePresence */}
-        <div className="content-grid">
+        <div className="ai-tabs-section__grid">
           <AnimatePresence mode="wait">
             {/* Text */}
             <motion.div
               key={`text-${activeTab}`}
-              className="text-content"
+              className="ai-tabs-section__text-col"
               initial={{ opacity: 0, x: -100 }}
               animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.7, ease: 'easeOut' }}
             >
-              <h2 className="sub-heading">{currentContent.title}</h2>
-              <ul className="feature-list">
+              <h2 className="ai-tabs-section__subheading">{currentContent.title}</h2>
+              <ul className="ai-tabs-section__feature-list">
                 {currentContent.features.map((feature, index) => (
-                  <li key={index} className="feature-item">
-                    <div className="icon-wrapper">
-                      <CheckIcon />
-                    </div>
-                    <span className="feature-text">{feature}</span>
+                  <li key={index} className="ai-tabs-section__feature-item">
+                    <span className="ai-tabs-section__feature-text">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -130,7 +88,7 @@ const NewSection = () => {
             {/* Image */}
             <motion.div
               key={`image-${activeTab}`}
-              className="image-container"
+              className="ai-tabs-section__image-col"
               initial={{ opacity: 0, x: 100 }}
               animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
               exit={{ opacity: 0, x: 100 }}
@@ -139,7 +97,7 @@ const NewSection = () => {
               <img
                 src={currentContent.image}
                 alt={`Dashboard UI ${activeTab}`}
-                className="dashboard-image"
+                className="ai-tabs-section__image"
                 onError={(e) => {
                   e.target.onerror = null;
                   e.target.src = 'https://placehold.co/800x600/e2e8f0/334155?text=Image+Not+Found';

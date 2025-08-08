@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
+import DareAiLogo from '../assets/DareAi_logo1.png'; // Import the logo image
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -7,8 +8,8 @@ const Navbar = () => {
   // Function to handle smooth scrolling to a section
   const handleScrollToSection = (event, sectionId) => {
     // Prevent the default anchor link behavior (the abrupt jump)
-    event.preventDefault(); 
-    
+    event.preventDefault();
+
     // Close the mobile menu if it's open
     setIsMenuOpen(false);
 
@@ -29,7 +30,8 @@ const Navbar = () => {
     <nav className="navbar">
       {/* Left section: Brand name or logo */}
       <div className="navbar-brand">
-        DareAISearch
+        {/* Replaced the text heading with an image */}
+        <img src={DareAiLogo} alt="DareAISearch Logo" className="navbar-logo" />
       </div>
 
       {/* Hamburger icon for mobile view */}

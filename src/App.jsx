@@ -1,5 +1,4 @@
-// src/App.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './Components/Navbar';
 import HeroSection from './Components/HeroSection';
 import BookDemo from './Components/BookDemo';
@@ -9,61 +8,82 @@ import SpeedSearch from './Components/SpeedSearch';
 import FeatureSection from './Components/FeatureSection';
 import StaticTestimonials from './Components/StaticTestimonials.jsx';
 import WhyTrustUs from './Components/WhyTrustUs';
-import ScrollAnimation from './Components/ScrollAnimation'; // <-- Import the animation wrapper
+import ScrollAnimation from './Components/ScrollAnimation';
 import './App.css';
-import Geo from './Components/Geo'; // Import the Geo component
+import Geo from './Components/Geo';
+import Footer from './Components/Footer.jsx';
 
 function App() {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Set the breakpoint to 1024px to cover both mobile and tablet devices
+      setIsSmallScreen(window.innerWidth <= 1024);
+    };
+
+    handleResize(); // Set initial state
+    window.addEventListener('resize', handleResize); // Update on resize
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className="App">
       <main className="container">
         <Navbar />
 
         <ScrollAnimation>
-          <HeroSection />
+          <div className="section-spacing">
+            <HeroSection />
+          </div>
         </ScrollAnimation>
 
         <ScrollAnimation>
-          <FeatureSection />
+          <section id="Why-DareAi" className="section-spacing">
+            <FeatureSection />
+          </section>
         </ScrollAnimation>
 
         <ScrollAnimation>
-          <SpeedSearch />
+          <div className="section-spacing">
+            <SpeedSearch />
+          </div>
         </ScrollAnimation>
 
-   <ScrollAnimation>
-          <Geo />
-        </ScrollAnimation>
+        {/* The Geo section will not be visible on screens up to 1024px wide */}
+        {!isSmallScreen && (
+          <ScrollAnimation>
+            <section id="What-is-geo" className="section-spacing">
+              <Geo />
+            </section>
+          </ScrollAnimation>
+        )}
 
-     
-       
-
-        <section id="benefits">
+        <section id="benefits" className="section-spacing">
           <ScrollAnimation>
             <NewSection />
           </ScrollAnimation>
         </section>
 
-        <section id="features">
+        <section id="features" className="section-spacing">
           <ScrollAnimation>
             <AdvantageSection />
           </ScrollAnimation>
         </section>
 
-        <section id="reviews">
+        <section id="reviews" className="section-spacing">
           <ScrollAnimation>
-                  <StaticTestimonials />
-
+            <StaticTestimonials />
           </ScrollAnimation>
         </section>
 
-        <section id="Book-A-Demo">
+        <section id="Book-A-Demo" className="section-spacing">
           <ScrollAnimation>
             <BookDemo />
           </ScrollAnimation>
         </section>
-        <WhyTrustUs />
 
+        <Footer />
       </main>
     </div>
   );

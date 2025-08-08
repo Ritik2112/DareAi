@@ -1,15 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .advantage-section {
-  padding: 10px 20px;
-  max-width: 1100px;
-  margin: 0 auto;
+  padding: 10px 30px;
+  max-width: 1200px;
+  
   font-family: 'Poppins';
   color:#000000;
 
 }
 
-.advantage-title {
+.advantage-subheading {
   text-align: center;
-  font-size: 50px;
+  font-size: clamp(28px, 5vw, 50px); /* scales between 28px and 50px depending on screen size */
   font-weight: 700;
   margin-bottom: 40px;
  
@@ -51,6 +53,7 @@
 .advantage-card p {
   font-size: 18px;
   line-height: 1.6;
+  text-align: 'justify-left';
 }
 
 .advantage-button-wrapper {
@@ -78,11 +81,17 @@
 @media (max-width: 991px) {
   .advantage-grid {
     grid-template-columns: repeat(2, 1fr);
+    
   }
 }
 
 @media (max-width: 600px) {
   .advantage-grid {
     grid-template-columns: 1fr;
+
   }
+
+ .advantage-section {
+  padding: 0px 0;
+}
 }

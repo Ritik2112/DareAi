@@ -68,7 +68,7 @@ const Geo = () => {
       ref={containerRef}
       className={`geo-seo-container ${isInView ? 'is-visible' : ''}`}
     >
-      <h1 className="main-heading">We Empower Your Brand</h1>
+      <h1 className="main-heading">We empower your brand with a unified search strategy</h1>
       <div className="venn-diagram">
         {/* Left Circle - GEO */}
         <div className="circle geo-circle">

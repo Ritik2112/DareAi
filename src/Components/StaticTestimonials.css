@@ -1,99 +1,152 @@
 /* src/StaticTestimonials.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .static-testimonials-section {
   max-width: 1200px;
   margin: 60px auto;
-  padding: 40px 20px;
+  padding: 1px 30px;
   text-align: center;
-  font-family: 'Poppins', sans-serif; /* Adjusted font family */
+  font-family: 'Poppins', sans-serif;
   background-color: #ffffff;
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 50px;
   font-weight: 700;
   margin-bottom: 3rem;
   color: #333;
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+/* The wrapper is now the dedicated scroll container on all screen sizes */
+.testimonials-scroll-wrapper {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
   margin-bottom: 3rem;
 }
 
-.testimonial-card {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+/* This is the inner element that handles the layout */
+.testimonials-inner-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  /* Ensure the grid doesn't wrap on mobile */
+  display: flex;
+  flex-wrap: nowrap;
 }
 
-.quote-icon {
-  font-size: 3rem;
-  font-weight: 900;
-  color: #c0c0c0;
+.testimonial-card {
+  background-color: #f5f5f5;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+}
+
+.quote-and-logo {
+  position: relative;
   margin-bottom: 10px;
 }
 
-.company-logo {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  margin-bottom: 20px;
+.quote-icon {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.company-logo-circle {
+  display: block;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #000000;
+  margin: 0 auto;
 }
 
 .testimonial-quote {
   font-size: 1rem;
-  color: #555;
+  color: #333;
   line-height: 1.6;
-  flex-grow: 1; /* Allows the quote to take up available space */
+  margin-top: 5px;
+  margin-bottom: 0px;
 }
 
 .testimonial-author {
-  margin-top: 20px;
+  margin-top: auto;
 }
 
 .author-name {
   font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 4px;
-  color: #333;
+  font-weight: 700;
+  margin-bottom: 0px;
+  color: #000;
 }
 
 .author-designation {
   font-size: 0.85rem;
-  color: #777;
+  color: #555;
+  white-space: pre-line;
+  margin-top: 0px;
 }
 
-.waitlist-button {
-  background-color: #ffd800;
-  color: #000;
-  border: none;
-  padding: 12px 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
+/* Dots below cards */
+.dot-indicators {
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  margin-top: -20px;
+  margin-bottom: 30px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
   transition: background-color 0.3s;
 }
 
-.waitlist-button:hover {
-  background-color: #ffe84d;
+.dot.active {
+  background-color: #1e40af;
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 992px) {
-  .testimonials-grid {
-    grid-template-columns: 1fr;
+  /* On mobile, the cards are set to full width */
+  .testimonial-card {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    min-width: 100%;
+  }
+
+  /* The inner grid becomes a flex container for scrolling */
+  .testimonials-inner-grid {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  
+  .dot-indicators {
+    display: flex;
   }
 }
 
 @media (max-width: 768px) {
   .section-title {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .static-testimonials-section {
+    padding: 10px 0;
   }
 }

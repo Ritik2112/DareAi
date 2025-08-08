@@ -1,85 +1,126 @@
-/* src/SpeedSearch.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .athena-ai-section {
-  text-align: center;
-  padding: 80px 20px;
-  background-color: #ffffff; /* White background for the section */
-  font-family: 'Inter', sans-serif; /* Using Inter font as per instructions */
-}
-
-.athena-ai-heading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 3rem;
-  line-height: 1.2;
-}
-
-.athena-ai-cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 30px; /* Space between cards */
-  flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+  padding: 10px 30px;
+  background-color: #ffffff;
+  font-family: 'Poppins', sans-serif;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+.athena-ai-heading {
+  font-size: 50px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.athena-ai-cards-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .athena-ai-card {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+  flex: 1;
+  padding: 30px 24px;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: calc(33.33% - 20px); /* Three columns by default (desktop and tablet) */
-  min-width: 280px; /* Minimum width for cards before wrapping */
-  box-sizing: border-box; /* Include padding in width calculation */
+  gap: 16px;
+  min-width: 280px;
+  box-sizing: border-box;
+  align-items: flex-start; /* Align items at top for consistency */
+}
+
+/* Vertical dividers between cards except last one */
+.with-divider {
+  border-right: 1px solid #ddd;
 }
 
 .athena-ai-icon-circle {
-  background-color: #e6f0ff; /* Light blue background for the circle */
+  background-color: #ffffff;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-  color: #007bff; /* Blue color for the icon */
+  border: 1px solid #030000;
+  margin-bottom: 1px; /* Space below icon */
 }
 
 .athena-ai-illustration {
-  width: 100%; /* Make the image fill the circle */
-  height: 100%; /* Make the image fill the circle */
-  object-fit: contain; /* Ensure the image fits within the circle without cropping */
-  border-radius: 50%; /* Keep the image itself circular if it's not already */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .athena-ai-card-title {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
-  color: #333;
-  margin-bottom: 10px;
+  color: #000000;
   line-height: 1.4;
+  margin-bottom: 8px;
+  min-height: 48px; /* Reserve equal space for headings */
+  display: flex;
+  align-items: center; /* Center vertically if one line */
 }
 
 .athena-ai-card-description {
   font-size: 0.95rem;
-  color: #555;
+  color: #333333;
   line-height: 1.6;
+  margin-top: 0; /* Remove default margin */
+  text-align: justify;
 }
 
-/* Responsive adjustments */
-/* For screens smaller than 768px (e.g., mobile devices), stack cards */
-@media (max-width: 768px) {
-  .athena-ai-card {
-    width: 90%; /* Single column on small screens */
-  }
+/* Responsive - Tablet */
+@media (max-width: 900px) {
   .athena-ai-cards-container {
-    gap: 20px;
+    flex-direction: column;
+    border: none;
   }
+
+  .athena-ai-card {
+    border-right: none !important;
+    border-bottom: 1px solid #ddd;
+    align-items: center; /* Center content in stacked layout */
+    text-align: center;
+  }
+
+  .athena-ai-card:last-child {
+    border-bottom: none;
+  }
+
   .athena-ai-heading {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    font-weight: 800;
   }
+
+  .athena-ai-card-title {
+    min-height: auto; /* Allow natural height for mobile */
+   ;
+  }
+
+  .athena-ai-card-description {
+    text-align: center;
+
+  }
+
+  .athena-ai-icon-circle {
+    margin: 0 auto 10px auto; /* Center the icon */
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 576px) {
+  .athena-ai-section {
+    padding: 20px 0;
+    
+  }
+
+  
 }
