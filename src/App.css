@@ -63,20 +63,20 @@ body {
 }
 
 .section-spacing {
-  margin-bottom: 60px; /* Default for large screens (desktop) */
+  margin-bottom: 20px; /* Default for large screens (desktop) */
 }
 
 /* Medium screens (tablet) */
 @media (max-width: 1024px) {
   .section-spacing {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 }
 
 /* Small screens (mobile) */
 @media (max-width: 768px) {
   .section-spacing {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 
     
   }

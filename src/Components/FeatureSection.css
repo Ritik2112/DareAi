@@ -5,7 +5,7 @@
   --why-ai-color-primary-dark: #104041;
   --why-ai-color-text-secondary: black;
   --why-ai-color-bg-main: #ffffff;
-  --why-ai-font-main: 'Poppins', sans-serif;
+  --why-ai-font-main: 'Poppins';
   --why-ai-font-heading: 'Space Grotesk', sans-serif;
 }
 
@@ -19,7 +19,7 @@
   justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 1.5rem;
+  padding: 5px 30px;
   box-sizing: border-box;
 }
 

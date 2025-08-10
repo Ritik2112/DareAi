@@ -2,151 +2,150 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .static-testimonials-section {
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 1px 30px;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-  background-color: #ffffff;
+    max-width: 1200px;
+   
+    padding: 5px 30px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
 }
 
 .section-title {
-  font-size: 50px;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  color: #333;
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #333;
 }
 
 /* The wrapper is now the dedicated scroll container on all screen sizes */
 .testimonials-scroll-wrapper {
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  margin-bottom: 3rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 3rem;
 }
 
 /* This is the inner element that handles the layout */
+/* By default, it's a grid for larger screens, ensuring even column widths */
 .testimonials-inner-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  /* Ensure the grid doesn't wrap on mobile */
-  display: flex;
-  flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+    gap: 20px;
 }
 
 .testimonial-card {
-  background-color: #f5f5f5;
-  padding: 30px 25px;
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  text-align: left;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    padding: 30px 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #ddd;
 }
 
 .quote-and-logo {
-  position: relative;
-  margin-bottom: 10px;
+    position: relative;
+    margin-bottom: 10px;
 }
 
 .quote-icon {
-  font-size: 2rem;
-  font-weight: 900;
-  color: #000;
-  position: absolute;
-  top: 0;
-  left: 0;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .company-logo-circle {
-  display: block;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid #000000;
-  margin: 0 auto;
+    display: block;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #000000;
+    margin: 0 auto;
 }
 
 .testimonial-quote {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.6;
-  margin-top: 5px;
-  margin-bottom: 0px;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-top: 5px;
+    margin-bottom: 0px;
 }
 
 .testimonial-author {
-  margin-top: auto;
+    margin-top: auto; /* Pushes author to the bottom if card content varies */
 }
 
 .author-name {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 0px;
-  color: #000;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0px;
+    color: #000;
 }
 
 .author-designation {
-  font-size: 0.85rem;
-  color: #555;
-  white-space: pre-line;
-  margin-top: 0px;
+    font-size: 0.85rem;
+    color: #555;
+    white-space: pre-line;
+    margin-top: 0px;
 }
 
 /* Dots below cards */
 .dot-indicators {
-  display: none;
-  justify-content: center;
-  gap: 8px;
-  margin-top: -20px;
-  margin-bottom: 30px;
+    display: none; /* Hidden by default on larger screens */
+    justify-content: center;
+    gap: 8px;
+    margin-top: -20px;
+    margin-bottom: 30px;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
-  background-color: #ccc;
-  border-radius: 50%;
-  transition: background-color 0.3s;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s;
 }
 
 .dot.active {
-  background-color: #1e40af;
+    background-color: #1e40af;
 }
 
-/* Responsive */
+/* Responsive adjustments */
 @media (max-width: 992px) {
-  /* On mobile, the cards are set to full width */
-  .testimonial-card {
-    flex: 0 0 100%;
-    scroll-snap-align: start;
-    min-width: 100%;
-  }
+    /* On screens up to 992px, the inner grid becomes a flex container for horizontal scrolling */
+    .testimonials-inner-grid {
+        display: flex;
+        flex-wrap: nowrap; /* Prevents wrapping, enabling horizontal scroll */
+        /* The scroll-snap properties are already on .testimonials-scroll-wrapper */
+    }
 
-  /* The inner grid becomes a flex container for scrolling */
-  .testimonials-inner-grid {
-    display: flex;
-    flex-wrap: nowrap;
-  }
-  
-  .dot-indicators {
-    display: flex;
-  }
+    /* On smaller screens, each card takes up 100% of the available width */
+    .testimonial-card {
+        flex: 0 0 100%; /* Ensures each card takes full width and doesn't grow/shrink */
+        scroll-snap-align: start; /* Aligns the start of the card to the scroll container */
+        min-width: 100%; /* Ensures the card is at least 100% width */
+    }
+
+    .dot-indicators {
+        display: flex; /* Show dots on smaller screens */
+    }
 }
 
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
+    .section-title {
+        font-size: 2rem;
+    }
 }
 
 @media (max-width: 576px) {
-  .static-testimonials-section {
-    padding: 10px 0;
-  }
+    .static-testimonials-section {
+        padding: 10px 0;
+    }
 }

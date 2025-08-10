@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: flex-start; /* Aligns content to the top */
   align-items: center;
-  padding: 10px 30px;
+  padding: 5px 30px;
   font-family: Poppins, sans-serif;
   background-color: #ffffff;
   min-height: auto; /* Changed from 100vh to auto to remove extra space */
@@ -39,7 +39,7 @@
   width: 63.4%;
   height: 100%;
   border-radius: 50%;
-  opacity: 0.7;
+  opacity: 0.8;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,19 +48,32 @@
 }
 
 .geo-circle {
-  background-color: #4b3190;
+ 
+  
+
   left: 0;
   top: 0;
   justify-content: flex-start;
   padding-left: 7%;
 }
+.geo-circle {
+  background-color: #4E207A;
+  opacity: 1 !important;
+  filter: none;
+  
+}
 
 .seo-circle {
-  background-color: #fae400;
+  
   right: 0;
   top: 0;
   justify-content: flex-end;
   padding-right: 7%;
+}
+.seo-circle {
+  background-color:#e0c426;
+   
+  filter: none;
 }
 
 /* --- RESPONSIVE CONTENT BLOCKS --- */
@@ -139,7 +152,7 @@
 }
 
 .content-block li, .content-block1 li {
-  opacity: 0;
+  opacity: 1;
   transform: translateY(20px);
   animation-fill-mode: forwards;
 }

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import './NewSection.css'; // Your CSS file
-
+import './NewSection.css';
 import DareAIImage1 from '../assets/DareAi2.webp';
 import DareAIImage2 from '../assets/DareAi3.webp';
 import DareAIImage3 from '../assets/DareAi1.webp';
@@ -13,6 +12,7 @@ const tabData = {
     features: [
       'We track your brand’s visibility across Google AI Overviews, ChatGPT, and Perplexity - measuring presence in the AI search results that influence customer decisions and convert to revenue.',
     ],
+    label: 'Track',
     image: DareAIImage1,
   },
   2: {
@@ -20,6 +20,7 @@ const tabData = {
     features: [
       'Understand your market position by analyzing competitor performance in generative search. We identify content gaps and opportunities to help you dominate the AI landscape.',
     ],
+    label: 'Engage',
     image: DareAIImage2,
   },
   3: {
@@ -27,6 +28,7 @@ const tabData = {
     features: [
       'Monitor how your brand is perceived by AI platforms and in AI-generated content. Ensure your brand story is accurately and positively represented in the new search paradigm.',
     ],
+    label: 'Adapt',
     image: DareAIImage3,
   },
 };
@@ -58,7 +60,7 @@ const NewSection = () => {
                 activeTab === Number(key) ? 'ai-tabs-section__tab--active' : ''
               }`}
             >
-              {key}
+              {tabData[key].label}
             </button>
           ))}
         </div>

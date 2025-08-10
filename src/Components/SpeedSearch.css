@@ -1,25 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .athena-ai-section {
-  padding: 10px 30px;
+  padding: 5px 0px;
   background-color: #ffffff;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   max-width: 1200px;
-  margin: 0 auto;
+  
 }
 
 .athena-ai-heading {
   font-size: 50px;
   font-weight: 700;
   color: #000000;
-  margin-bottom: 60px;
+  
   text-align: center;
+
 }
 
 .athena-ai-cards-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
 }
 
 .athena-ai-card {
@@ -74,7 +76,26 @@
   color: #333333;
   line-height: 1.6;
   margin-top: 0; /* Remove default margin */
-  text-align: justify;
+  text-align: left;
+  padding: 0px 0px;
+  list-style: none; /* remove default bullets */
+}
+
+.athena-ai-card-description li {
+  position: relative;
+  padding-left: 18px; /* space for custom bullet */
+  margin-bottom: 10px;
+}
+
+.athena-ai-card-description li::before {
+  content: '•'; /* bullet character */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #000; /* bullet color */
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1;
 }
 
 /* Responsive - Tablet */
@@ -102,12 +123,10 @@
 
   .athena-ai-card-title {
     min-height: auto; /* Allow natural height for mobile */
-   ;
   }
 
   .athena-ai-card-description {
-    text-align: center;
-
+    text-align: left;
   }
 
   .athena-ai-icon-circle {
@@ -119,8 +138,14 @@
 @media (max-width: 576px) {
   .athena-ai-section {
     padding: 20px 0;
-    
   }
 
-  
+  .athena-ai-card-description {
+    text-align: left;
+    padding: 0px;
+  }
+
+  .athena-ai-card {
+    padding: 30px 0px;
+  }
 }

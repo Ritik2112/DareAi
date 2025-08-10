@@ -29,8 +29,8 @@ padding: 1px;
 
 /* Styling for the logo image */
 .navbar-logo {
-  height: 80px; /* Adjust the height of the logo as needed */
-  max-height: 80px; /* Ensure the logo doesn't get too large */
+  height: 100px; /* Adjust the height of the logo as needed */
+  max-height: 100px; /* Ensure the logo doesn't get too large */
 }
 
 /* Styling for the list of navigation links (desktop view) */

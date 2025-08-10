@@ -7,7 +7,7 @@ import AdvantageSection from './Components/AdvantageSection';
 import SpeedSearch from './Components/SpeedSearch';
 import FeatureSection from './Components/FeatureSection';
 import StaticTestimonials from './Components/StaticTestimonials.jsx';
-import WhyTrustUs from './Components/WhyTrustUs';
+
 import ScrollAnimation from './Components/ScrollAnimation';
 import './App.css';
 import Geo from './Components/Geo';
@@ -32,17 +32,17 @@ function App() {
       <main className="container">
         <Navbar />
 
-        <ScrollAnimation>
+       
           <div className="section-spacing">
             <HeroSection />
           </div>
-        </ScrollAnimation>
+       
 
-        <ScrollAnimation>
+        
           <section id="Why-DareAi" className="section-spacing">
             <FeatureSection />
           </section>
-        </ScrollAnimation>
+       
 
         <ScrollAnimation>
           <div className="section-spacing">
@@ -60,9 +60,9 @@ function App() {
         )}
 
         <section id="benefits" className="section-spacing">
-          <ScrollAnimation>
+         
             <NewSection />
-          </ScrollAnimation>
+         
         </section>
 
         <section id="features" className="section-spacing">
