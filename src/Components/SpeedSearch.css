@@ -5,38 +5,52 @@
   background-color: #ffffff;
   font-family: 'Poppins';
   max-width: 1200px;
-  
 }
 
 .athena-ai-heading {
   font-size: 50px;
   font-weight: 700;
   color: #000000;
-  
   text-align: center;
-
 }
 
+/* Horizontal scroll wrapper */
+.athena-ai-scroll-wrapper {
+  overflow-x: auto; /* Allow scrolling */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar (all browsers) */
+.athena-ai-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.athena-ai-scroll-wrapper {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;    /* Firefox */
+}
+
+/* Cards container */
 .athena-ai-cards-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-
 }
 
+/* Card styles */
 .athena-ai-card {
   flex: 1;
-  padding: 30px 24px;
+  padding: 0px 24px;
   text-align: left;
   display: flex;
   flex-direction: column;
   gap: 16px;
   min-width: 280px;
   box-sizing: border-box;
-  align-items: flex-start; /* Align items at top for consistency */
+  align-items: flex-start;
+  margin-bottom: 0px;
 }
 
-/* Vertical dividers between cards except last one */
 .with-divider {
   border-right: 1px solid #ddd;
 }
@@ -49,8 +63,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #030000;
-  margin-bottom: 1px; /* Space below icon */
+  margin: 0 auto 10px auto; /* Center horizontally for all screens */
 }
 
 .athena-ai-illustration {
@@ -61,91 +74,103 @@
 }
 
 .athena-ai-card-title {
-  font-size: 1.125rem;
+  font-size: 1.23rem;
   font-weight: 600;
   color: #000000;
   line-height: 1.4;
-  margin-bottom: 8px;
-  min-height: 48px; /* Reserve equal space for headings */
-  display: flex;
-  align-items: center; /* Center vertically if one line */
+  margin-bottom: 6px;
+  min-height: 0px;
+  text-align: center; /* center title text */
 }
 
 .athena-ai-card-description {
   font-size: 0.95rem;
-  color: #333333;
+  color: #141414;
   line-height: 1.6;
-  margin-top: 0; /* Remove default margin */
+  margin-top: 0;
   text-align: left;
-  padding: 0px 0px;
-  list-style: none; /* remove default bullets */
+  padding: 0;
+  list-style: none;
 }
 
 .athena-ai-card-description li {
   position: relative;
-  padding-left: 18px; /* space for custom bullet */
-  margin-bottom: 10px;
+  padding-left: 28px;
+  margin-bottom: 20px;
+  color: #151515;
+  
 }
 
 .athena-ai-card-description li::before {
-  content: '•'; /* bullet character */
+  content: '✓';
   position: absolute;
   left: 0;
-  top: 0;
-  color: #000; /* bullet color */
+  top: 2px;
+  background-color: #21a72c;
+  color: #ffffff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  font-size: 14px;
   font-weight: bold;
-  font-size: 1.2rem;
-  line-height: 1;
 }
 
-/* Responsive - Tablet */
+/* Mobile horizontal scroll behaviour */
 @media (max-width: 900px) {
   .athena-ai-cards-container {
-    flex-direction: column;
-    border: none;
+    flex-wrap: nowrap;
+    gap: 20px;
   }
 
   .athena-ai-card {
+    flex: 0 0 100%;
+    min-width: 100%;
+    scroll-snap-align: start;
     border-right: none !important;
-    border-bottom: 1px solid #ddd;
-    align-items: center; /* Center content in stacked layout */
-    text-align: center;
+    border-bottom: none !important;
   }
 
-  .athena-ai-card:last-child {
-    border-bottom: none;
-  }
-
+  /* Center icon in mobile (already handled globally) */
   .athena-ai-heading {
     font-size: 1.5rem;
     font-weight: 800;
-  }
-
-  .athena-ai-card-title {
-    min-height: auto; /* Allow natural height for mobile */
-  }
-
-  .athena-ai-card-description {
-    text-align: left;
-  }
-
-  .athena-ai-icon-circle {
-    margin: 0 auto 10px auto; /* Center the icon */
   }
 }
 
 /* Extra small screens */
 @media (max-width: 576px) {
   .athena-ai-section {
-    padding: 20px 0;
+    padding: 30px 0;
   }
-
-  .athena-ai-card-description {
-    text-align: left;
-    padding: 0px;
-  }
-
   .athena-ai-card {
-    padding: 30px 0px;
+    padding: 0px 0px;
   }
+  .athena-ai-card-title {
+    text-align: center;
+    margin-top: 1px;
+  }
+  .athena-ai-heading {
+    margin-bottom: 45px;
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+.athena-ai-scroll-wrapper {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.athena-ai-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Vertical dividers between cards except last one */
+.with-divider {
+  border-right: 1px solid #ddd;
 }

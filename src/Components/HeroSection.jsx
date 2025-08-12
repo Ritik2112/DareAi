@@ -16,9 +16,6 @@ const HeroSection = () => {
       <div className="hero-content">
         <h1 className="hero-title animate-title">
           DareAISearch
-          <span className="search-icon-animated">
-            <FaSearch />
-          </span>
         </h1>
         <p className="hero-description fade-in-delay">
           Built for modern brands to win the era of AI-search with precision, scalability, and real-time control.

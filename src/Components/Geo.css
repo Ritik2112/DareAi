@@ -4,13 +4,13 @@
   flex-direction: column;
   justify-content: flex-start; /* Aligns content to the top */
   align-items: center;
-  padding: 5px 30px;
+  padding: 0px 30px;
   font-family: Poppins, sans-serif;
   background-color: #ffffff;
   min-height: auto; /* Changed from 100vh to auto to remove extra space */
   box-sizing: border-box;
   overflow: hidden;
-  margin-bottom: 130px;
+  margin-bottom: 100px;
   
 }
 
@@ -71,7 +71,7 @@
   padding-right: 7%;
 }
 .seo-circle {
-  background-color:#e0c426;
+  background-color:#fae400;
    
   filter: none;
 }

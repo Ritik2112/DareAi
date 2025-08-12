@@ -3,7 +3,7 @@
 .hero-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  gap: 2rem;
   align-items: center;
   padding: 5px 30px;
   background-color: white;
@@ -11,24 +11,25 @@
   max-width: 1200px;
   margin-bottom: 40px;
  
+ 
 }
 
 .hero-content {
   text-align: left;
-  max-width: 550px;
+  max-width: 600px;
 }
 
 .hero-title {
   font-size: 50px;
   font-weight: 700;
-  color: #333;
+  color: #000000;
   margin-bottom: 1rem;
   line-height: 1.2;
 }
 
 .hero-description {
   font-size: 1.6rem;
-  color: #555;
+  color: #333;
   line-height: 1.75;
   margin-bottom: 2rem;
 }
@@ -63,13 +64,13 @@
   justify-content: center;
   align-items: center;
 }
+.hero-image-container {
+  overflow: hidden;
+}
 
 .hero-image {
   width: 130%;
-  height: auto;
-  object-fit: cover;
- 
-  
+  max-width: none;
 }
 
 /* Tablet view */
@@ -99,13 +100,14 @@
   
   .hero-description {
     font-size: 1.25rem;
+    text-align: left;
   }
 }
 
 /* Mobile view */
 @media (max-width: 576px) {
   .hero-section {
-    padding: 0;
+    padding: 2px 0px;
   }
   
   .hero-content {
@@ -115,6 +117,7 @@
   .hero-title {
     font-size: 2rem;
     text-align: center;
+    margin-top: 0px;
   }
   
   .hero-description {
@@ -135,21 +138,8 @@
   100% { opacity: 1; transform: translateX(0); }
 }
 
-/* Search icon drop + bounce + glow */
-.search-icon-animated {
-  display: inline-block;
-  margin-left: 10px;
-  font-size: 1.8rem;
-  opacity: 0;
-  animation: dropBounceGlow 1s ease forwards 0.2s, pulseGlow 2s infinite 2s;
-}
 
-@keyframes dropBounceGlow {
-  0% { opacity: 0; transform: translateY(-60px) scale(0.8); }
-  60% { opacity: 1; transform: translateY(10px) scale(1.1); }
-  80% { transform: translateY(-5px) scale(1); }
-  100% { transform: translateY(0) scale(1); }
-}
+
 
 /* Gentle glowing pulse loop */
 @keyframes pulseGlow {

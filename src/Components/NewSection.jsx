@@ -13,7 +13,7 @@ const tabData = {
       'We track your brand’s visibility across Google AI Overviews, ChatGPT, and Perplexity - measuring presence in the AI search results that influence customer decisions and convert to revenue.',
     ],
     label: 'Track',
-    image: DareAIImage1,
+    image: DareAIImage3,
   },
   2: {
     title: 'AI Competitive Intelligence',
@@ -21,7 +21,7 @@ const tabData = {
       'Understand your market position by analyzing competitor performance in generative search. We identify content gaps and opportunities to help you dominate the AI landscape.',
     ],
     label: 'Engage',
-    image: DareAIImage2,
+    image: DareAIImage1,
   },
   3: {
     title: 'Brand Reputation Intelligence',
@@ -29,7 +29,7 @@ const tabData = {
       'Monitor how your brand is perceived by AI platforms and in AI-generated content. Ensure your brand story is accurately and positively represented in the new search paradigm.',
     ],
     label: 'Adapt',
-    image: DareAIImage3,
+    image: DareAIImage2,
   },
 };
 

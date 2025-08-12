@@ -3,10 +3,10 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import './FeatureSection.css'; // Your CSS file
 
-import featureHeartsImage from '../assets/Revenue.webp';
-import AiDrivendiscovery from '../assets/Ai_driven_discovery.webp';
-import ZeroClick from '../assets/Zero_click_feature.webp';
-import Traditional from '../assets/Traditional_SEO.webp';
+import featureHeartsImage from '../assets/8.webp';
+import AiDrivendiscovery from '../assets/2.webp';
+import ZeroClick from '../assets/6.webp';
+import Traditional from '../assets/4.webp';
 
 const animationVariants = {
   hiddenLeft: { opacity: 0, x: -50 },

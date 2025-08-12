@@ -7,7 +7,6 @@ import AdvantageSection from './Components/AdvantageSection';
 import SpeedSearch from './Components/SpeedSearch';
 import FeatureSection from './Components/FeatureSection';
 import StaticTestimonials from './Components/StaticTestimonials.jsx';
-
 import ScrollAnimation from './Components/ScrollAnimation';
 import './App.css';
 import Geo from './Components/Geo';
@@ -18,69 +17,56 @@ function App() {
 
   useEffect(() => {
     const handleResize = () => {
-      // Set the breakpoint to 1024px to cover both mobile and tablet devices
       setIsSmallScreen(window.innerWidth <= 1024);
     };
 
-    handleResize(); // Set initial state
-    window.addEventListener('resize', handleResize); // Update on resize
+    handleResize();
+    window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Helper function to wrap content with or without animation
+  const withAnimation = (content) => {
+    return isSmallScreen ? content : <ScrollAnimation>{content}</ScrollAnimation>;
+  };
 
   return (
     <div className="App">
       <main className="container">
         <Navbar />
 
-       
-          <div className="section-spacing">
-            <HeroSection />
-          </div>
-       
+        <div className="section-spacing">
+          <HeroSection />
+        </div>
 
-        
-          <section id="Why-DareAi" className="section-spacing">
-            <FeatureSection />
-          </section>
-       
+        <section id="Why-DareAi" className="section-spacing">
+          <FeatureSection />
+        </section>
 
-        <ScrollAnimation>
-          <div className="section-spacing">
-            <SpeedSearch />
-          </div>
-        </ScrollAnimation>
+        <div className="section-spacing">
+          {withAnimation(<SpeedSearch />)}
+        </div>
 
-        {/* The Geo section will not be visible on screens up to 1024px wide */}
         {!isSmallScreen && (
-          <ScrollAnimation>
-            <section id="What-is-geo" className="section-spacing">
-              <Geo />
-            </section>
-          </ScrollAnimation>
+          <section id="What-is-geo" className="section-spacing">
+            {withAnimation(<Geo />)}
+          </section>
         )}
 
         <section id="benefits" className="section-spacing">
-         
-            <NewSection />
-         
+          <NewSection />
         </section>
 
         <section id="features" className="section-spacing">
-          <ScrollAnimation>
-            <AdvantageSection />
-          </ScrollAnimation>
+          {withAnimation(<AdvantageSection />)}
         </section>
 
         <section id="reviews" className="section-spacing">
-          <ScrollAnimation>
-            <StaticTestimonials />
-          </ScrollAnimation>
+          {withAnimation(<StaticTestimonials />)}
         </section>
 
         <section id="Book-A-Demo" className="section-spacing">
-          <ScrollAnimation>
-            <BookDemo />
-          </ScrollAnimation>
+          {withAnimation(<BookDemo />)}
         </section>
 
         <Footer />

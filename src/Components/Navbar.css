@@ -29,9 +29,16 @@ padding: 1px;
 
 /* Styling for the logo image */
 .navbar-logo {
-  height: 100px; /* Adjust the height of the logo as needed */
-  max-height: 100px; /* Ensure the logo doesn't get too large */
+  height: 80px; /* Adjust the height of the logo as needed */
+  max-height: 80px; /* Ensure the logo doesn't get too large */
+  position: relative;
+  top: 12px; /* Adjust as needed */
+  left: 16px
+
+
 }
+
+
 
 /* Styling for the list of navigation links (desktop view) */
 .navbar-links {
@@ -157,6 +164,10 @@ padding: 1px;
     padding-left: 0;
     display: block; /* Ensure it's treated as a block element */
     height: auto;
-    width: 130px;
+    width: 120px;
+      position: relative;
+  top: 8px; /* Adjust as needed */
+  left: 0px;
+
   }
 }

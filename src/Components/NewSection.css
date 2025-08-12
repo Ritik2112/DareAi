@@ -1,23 +1,23 @@
 /* Main section container */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap');
 
 .ai-tabs-section {
   background-color: #f6f6f6;
   font-family: 'Poppins', sans-serif;
-  padding: 5px 30px; /* Added horizontal padding for smaller screens */
+  padding: 5px 30px;
   text-align: left;
-  overflow-x: hidden; /* Prevents horizontal scroll */
   border-radius: 14px;
+  overflow-x: hidden; /* Safety: no horizontal scroll inside */
 }
 
-/* Inner content wrapper for max-width */
+/* Inner content wrapper */
 .ai-tabs-section__content {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Typography */
+/* Headings */
 .ai-tabs-section__heading {
   font-size: 50px;
   font-weight: 700;
@@ -37,18 +37,16 @@
 .ai-tabs-section__nav {
   display: flex;
   gap: 0.5rem;
-  margin-bottom: -2rem;
+  
   padding: 0 1rem;
   justify-content: start;
- 
 }
 
 .ai-tabs-section__tab {
   font-size: 1rem;
   font-weight: 550;
-  color: #000000;
+  color: #000;
   background-color: transparent;
-  border: none;
   border: 1px solid black;
   padding: 0.75rem 1.5rem;
   display: flex;
@@ -59,102 +57,138 @@
 }
 
 .ai-tabs-section__tab:hover {
-  color: black;
   font-weight: 650;
 }
 
 .ai-tabs-section__tab--active {
-  color: black;
-  border-color: black;
-  background-color:#fae400 ;
+  background-color: #fae400;
 }
 
 .ai-tabs-section__tab:focus-visible {
   outline: none;
-  
 }
 
-/* Content Layout Grid */
+/* Content Grid */
 .ai-tabs-section__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
   align-items: center;
+  padding: 0px 0px;
 }
 
-/* The two columns in the grid */
+/* Text column */
 .ai-tabs-section__text-col {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 0px 0px;
+  
 }
 
+/* Image column — clipped to avoid horizontal scroll */
 .ai-tabs-section__image-col {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden; /* KEY: hides oversized image overflow */
+  padding: 0px 0px;
 }
 
 /* Feature List */
 .ai-tabs-section__feature-list {
   list-style: none;
-  padding: 0;
+  padding: 0px  0px;
   margin: 0;
 }
 
 .ai-tabs-section__feature-item {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 8rem;
+  margin-bottom: 12rem;
+  
 }
 
 .ai-tabs-section__feature-text {
-  color: #4b5563;
+  color: #242525;
   font-size: 1.125rem;
   line-height: 1.75rem;
   text-align: justify;
 }
 
-/* Image Styling */
+/* Image Styling — keep zoom look but hide overflow */
 .ai-tabs-section__image {
   border-radius: 0.75rem;
-  width: 130%;
+  width: 130%; /* oversize look */
   height: auto;
   object-fit: cover;
+  max-width: none; /* prevent auto shrink */
 }
 
-
 /* --- RESPONSIVE STYLES --- */
-
-/* Desktop Layout */
 @media (min-width: 1024px) {
   .ai-tabs-section__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Tablet and Mobile Layout */
-@media (max-width: 768px) {
-  .ai-tabs-section {
-    padding: 3rem 0rem;
+/* --- NEW: TABLET STYLES (ADDED FOR BETTER RESPONSIVENESS) --- 
+  This section targets tablets and small laptops, creating a smoother
+  transition between the desktop and mobile layouts.
+*/
+@media (max-width: 1023px) {
+  .ai-tabs-section__heading {
+    font-size: 2.5rem; /* Slightly smaller heading for tablets */
+  }
+
+  .ai-tabs-section__subheading {
+    text-align: center;
+  }
+
+  .ai-tabs-section__nav {
+    justify-content: center; /* Center tabs on single-column layouts */
     margin-bottom: 2rem;
   }
-  
+
+  .ai-tabs-section__text-col {
+    order: 2; /* Ensure text is below the image */
+  }
+
+  .ai-tabs-section__image-col {
+    order: 1; /* Ensure image is on top */
+  }
+
+  .ai-tabs-section__feature-item {
+    margin-bottom: 3rem; /* Reduce large vertical space */
+  }
+
+  .ai-tabs-section__image {
+    width: 110%; /* A slightly less aggressive zoom for tablets */
+  }
+}
+
+/* --- MOBILE STYLES (EXISTING) --- */
+@media (max-width: 768px) {
+  .ai-tabs-section {
+    padding: 1rem 0rem;
+    margin-bottom: 2rem;
+  }
+
   .ai-tabs-section__heading {
     font-size: 1.8rem;
-    text-align: center;
   }
 
   .ai-tabs-section__subheading {
     font-size: 1.5rem;
     text-align: center;
+    margin-top: 0px;
   }
-  
+
   .ai-tabs-section__nav {
-    justify-content: center;
     padding: 0 1rem;
-  }
   
+  }
+
   .ai-tabs-section__tab {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
@@ -166,30 +200,22 @@
     padding: 0px 20px;
   }
 
-  .ai-tabs-section__feature-item{
-      margin-bottom: 0rem;
-    
+  .ai-tabs-section__feature-item {
+    margin-bottom: 0rem;
   }
-  
-  .ai-tabs-section__text-col {
-    order: 2; /* Text appears below image on mobile */
-  }
-  
+
   .ai-tabs-section__image-col {
-    order: 1;
+    overflow: hidden; /* Mobile safety */
+    
+   
   }
-
-
-.ai-tabs-section__image {
-  border-radius: 0.75rem;
-  width: 110%;
-  height: auto;
-  object-fit: cover;
+  .ai-tabs-section__feature-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0rem;
+ 
+  
 }
 
-.ai-tabs-section__nav {
-  margin-bottom: 2rem;
-}
 
 }
-

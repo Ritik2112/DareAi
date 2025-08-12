@@ -62,8 +62,8 @@
 
 .company-logo-circle {
     display: block;
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     object-fit: cover;
     border: 1px solid #000000;
@@ -149,3 +149,30 @@
         padding: 10px 0;
     }
 }
+
+.athena-ai-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+  gap: 6px;
+}
+
+.athena-ai-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ccc;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.athena-ai-dot.active {
+  background-color: #1a73e8;
+}
+
+@media (min-width: 901px) {
+  .athena-ai-pagination {
+    display: none;
+  }
+}
+
+
