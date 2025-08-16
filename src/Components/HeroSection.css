@@ -10,8 +10,6 @@
   font-family: 'Poppins';
   max-width: 1200px;
   margin-bottom: 40px;
- 
- 
 }
 
 .hero-content {
@@ -31,7 +29,21 @@
   font-size: 1.6rem;
   color: #333;
   line-height: 1.75;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-logos {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  max-width: 350px; 
+  gap: 40px;
+}
+
+.hero-logos img {
+  flex: 1;
+  min-width: 0; /* Prevents images from overflowing flex container */
+  height: auto; /* Maintain aspect ratio */
 }
 
 .hero-button {
@@ -58,13 +70,10 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-/* Single Image Container */
 .hero-image-container {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.hero-image-container {
   overflow: hidden;
 }
 
@@ -86,13 +95,18 @@
     max-width: 100%;
     text-align: center;
     order: 2; /* Content below image on mobile */
+    display: flex; /* Added for centering */
+    flex-direction: column; /* Added for centering */
+    align-items: center; /* Added for centering */
+  }
+
+  .hero-description {
+    text-align: center;
   }
   
   .hero-image-container {
     order: 1; /* Image on top on mobile */
   }
-
-
   
   .hero-title {
     font-size: 3rem;
@@ -100,7 +114,6 @@
   
   .hero-description {
     font-size: 1.25rem;
-    text-align: left;
   }
 }
 
@@ -122,11 +135,27 @@
   
   .hero-description {
     font-size: 1.25rem;
-    text-align: left;
+    text-align: center;
+  }
+
+  .hero-logos {
+    /* Use a percentage width to be flexible on all mobile screen sizes */
+    width: 90%; 
+    /* Set a max-width just in case, but width will do most of the work */
+    max-width: 300px;
+    gap: 15px; /* Reduce gap between logos on smaller screens */
+  }
+
+  .hero-button {
+    /* Reduce padding and font size to give text more space */
+    padding: 0.8rem 1.2rem;
+    font-size: 0.95rem;
+    /* This forces the text to stay on a single line */
+    white-space: nowrap; 
   }
 }
 
-/* Title entrance animation */
+/* Animations (unchanged) */
 .animate-title {
   opacity: 0;
   transform: translateX(-30px);
@@ -138,16 +167,11 @@
   100% { opacity: 1; transform: translateX(0); }
 }
 
-
-
-
-/* Gentle glowing pulse loop */
 @keyframes pulseGlow {
   0%, 100% { text-shadow: 0 0 5px #000, 0 0 10px #555; }
   50% { text-shadow: 0 0 10px #000, 0 0 20px #888; }
 }
 
-/* Delay class for fade-in elements */
 .fade-in-delay {
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
@@ -158,5 +182,3 @@
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
-
-/* Additional utility classes removed as they are no longer needed for the new layout. */

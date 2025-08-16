@@ -58,7 +58,7 @@ const BookDemo = () => {
           
           {/* The button is now wrapped in a form-field div */}
           <div className="form-field">
-            <button type="submit" className="send-button">Send Message</button>
+            <button type="submit" className="send-button">Submit</button>
           </div>
 
         </form>

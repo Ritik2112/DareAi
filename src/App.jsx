@@ -12,6 +12,7 @@ import './App.css';
 import Geo from './Components/Geo';
 import Footer from './Components/Footer.jsx';
 
+
 function App() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
@@ -38,6 +39,8 @@ function App() {
         <div className="section-spacing">
           <HeroSection />
         </div>
+
+       
 
         <section id="Why-DareAi" className="section-spacing">
           <FeatureSection />
