@@ -1,19 +1,23 @@
 // src/BookDemo.jsx
-import React, { useRef } from 'react';
-import './BookDemo.css';
-import demoImage from '../assets/book_DareAi.webp';
-import useZohoForm from './useZohoForm';
+import React, { useRef, useState } from "react";
+import "./BookDemo.css";
+import demoImage from "../assets/Website_Footer_LP_DareAISearch_final.webp";
+import useZohoForm from "./useZohoForm";
 
 const BookDemo = () => {
   const formRef = useRef(null);
-  const { ZohoHiddenFields } = useZohoForm(formRef);
+  const { ZohoHiddenFields, validateForm } = useZohoForm(formRef);
+  const [error, setError] = useState("");
 
   const handleSubmit = (event) => {
-    if (window.checkMandatory4051926000100401011 && window.checkMandatory4051926000100401011()) {
-      return true;
-    } else {
+    const errorMessage = validateForm(); // run validation
+    if (errorMessage) {
       event.preventDefault();
+      setError(errorMessage); // show error message in UI
       return false;
+    } else {
+      setError(""); // clear error if no issue
+      return true;
     }
   };
 
@@ -45,7 +49,7 @@ const BookDemo = () => {
           </div>
           <div className="form-field">
             <label htmlFor="website">Website URL</label>
-            <input type="url" id="website" name="Website" placeholder="Website URL" />
+            <input type="text" id="website" name="Website" placeholder="Website URL" />
           </div>
           <div className="form-field">
             <label htmlFor="phone">Phone</label>
@@ -55,19 +59,18 @@ const BookDemo = () => {
             <label htmlFor="email">Email*</label>
             <input type="email" id="email" name="Email" placeholder="Email" required />
           </div>
-          
-          {/* The button is now wrapped in a form-field div */}
+
+          {/* Error message display */}
+          {error && <div className="error-message">{error}</div>}
+
           <div className="form-field">
             <button type="submit" className="send-button">Submit</button>
           </div>
-
         </form>
 
-        <div className="form-illustration">
-          <div className="star-burst-container">
-            <div className="star-burst-lines"></div>
-            <img src={demoImage} alt="Decorative Graphic" className="star-image" />
-          </div>
+        {/* Image */}
+        <div className="form-image">
+          <img src={demoImage} alt="Decorative Graphic" />
         </div>
       </div>
     </section>

@@ -5,7 +5,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
-  padding: 5px 30px;
+  padding: 0px 30px;
   background-color: white;
   font-family: 'Poppins';
   max-width: 1200px;
@@ -37,7 +37,7 @@
   align-items: center;
   margin-bottom: 1rem;
   max-width: 350px; 
-  gap: 40px;
+  gap: 50px;
 }
 
 .hero-logos img {

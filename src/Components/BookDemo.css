@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 .book-demo-section {
   padding: 0px 30px;
   margin-bottom: 40px;
@@ -7,6 +8,13 @@
   font-family: 'Poppins';
   text-align: center;
 }
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
 
 .book-demo-heading {
   font-size: 50px;
@@ -28,6 +36,7 @@
   align-items: center;
   gap: 5px;
   position: relative;
+  overflow: hidden; /* ✅ important for sticking image */
 }
 
 /* Form styling */
@@ -64,7 +73,7 @@
   transition: border 0.3s;
   background-color: #fff;
   color: #000;
-  box-sizing: border-box; /* Ensures padding is included in the width */
+  box-sizing: border-box;
 }
 
 .form-field input::placeholder {
@@ -96,51 +105,58 @@
   background-color: #000;
 }
 
-/* Right-side Illustration and Starburst */
-.form-illustration {
+/* Right-side Image */
+.form-image {
   flex-shrink: 0;
-  position: relative;
   width: 350px;
-  height: 350px;
-}
-
-.star-burst-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-}
-
-.star-burst-lines {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 250px;
-  height: 250px;
-  transform: translate(-50%, -50%);
-}
-
-.star-burst-lines::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: repeating-conic-gradient(from 0deg, transparent 0deg 3.5deg, #000 3.5deg 4deg);
-  border-radius: 50%;
-  opacity: 0.1;
-}
-
-.star-image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 320px;
   height: auto;
+}
+
+.form-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ✅ Desktop only → stick to bottom right */
+@media (min-width: 901px) {
+  .form-image {
+    position: absolute;
+    right: 40px;
+    bottom: 0;
+    max-width: 400px;
+    margin: 0;
+  }
+
+  .form-image img {
+    width: 100%;
+    height: 650px;
+  }
+}
+
+/* ✅ Fix overlap on mid screens (901px – 1200px) */
+@media (max-width: 1200px) and (min-width: 901px) {
+  .book-demo-wrapper {
+    gap: 30px;
+    padding: 50px 40px;
+  }
+
+  .book-demo-form {
+    flex: 1 1 55%;
+    max-width: 500px;
+  }
+
+.form-image {
+    position: absolute;
+    right: 40px;
+    bottom: 0;        /* stick image to bottom */
+    max-width: 350px; /* a little smaller for this range */
+  }
+
+   .form-image img {
+    height: auto;     /* keep natural height */
+    max-height: 600px; /* prevent overflow */
+  }
 }
 
 /* Tablet Responsive */
@@ -151,14 +167,19 @@
     padding: 40px 30px;
   }
 
-  .book-demo-form {
-    max-width: 100%; /* Allow it to expand fully */
-    flex: 1;         /* Take all available space */
+  /* Image above form */
+  .form-image {
+    position: relative;
+    order: -1;
     width: 100%;
+    max-width: 350px;
+    margin-bottom: 20px;
   }
 
-  .form-illustration {
-    display: none;
+  .book-demo-form {
+    max-width: 100%;
+    flex: 1;
+    width: 100%;
   }
 }
 
@@ -166,7 +187,7 @@
 @media (max-width: 600px) {
   .book-demo-section {
     padding: 0px 0;
-    margin-bottom: 50px; 
+    margin-bottom: 50px;
   }
 
   .book-demo-heading {
@@ -175,12 +196,18 @@
 
   .book-demo-wrapper {
     padding: 30px 20px;
+    padding-top: 8px;
     border-radius: 20px;
   }
 
   .book-demo-form {
     width: 100%;
-    max-width: 100%; /* Ensure full width on mobile too */
+    max-width: 100%;
+  }
+
+  .form-image {
+    max-width: 280px;
+   
   }
 
   .form-field input {
@@ -193,5 +220,19 @@
     padding: 16px;
     font-size: 16px;
     width: 100%;
+  }
+}
+
+/* ✅ Fix overlap between 900px – 1050px (image ABOVE form) */
+@media (min-width: 900px) and (max-width: 1050px) {
+  .form-section {
+    flex-direction: column-reverse;  /* image on top, form below */
+    align-items: center;
+  }
+
+  .form-image {
+    position: static;   /* no absolute positioning */
+    max-width: 500px;
+    margin-bottom: 20px; /* spacing between image and form */
   }
 }

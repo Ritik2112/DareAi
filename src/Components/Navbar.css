@@ -14,7 +14,7 @@
   border-radius: 10px; /* Even smaller border radius */
   width: 92vw; /* Make navbar width a bit smaller than full width */
   max-width: 1200px; /* Prevent it from being too wide on large screens */
-margin-top: -30px;
+margin-top: -40px;
 padding: 1px;
   top: 0;
   box-sizing: border-box;
@@ -32,7 +32,7 @@ padding: 1px;
   height: 80px; /* Adjust the height of the logo as needed */
   max-height: 80px; /* Ensure the logo doesn't get too large */
   position: relative;
-  top: 12px; /* Adjust as needed */
+  top: 8px; /* Adjust as needed */
   left: 16px
 
 
@@ -163,10 +163,10 @@ padding: 1px;
     margin-left: 0;
     padding-left: 0;
     display: block; /* Ensure it's treated as a block element */
-    height: auto;
-    width: 120px;
+    height: 60px;
+    width: 150px;
       position: relative;
-  top: 8px; /* Adjust as needed */
+  top: 0px; /* Adjust as needed */
   left: 0px;
 
   }

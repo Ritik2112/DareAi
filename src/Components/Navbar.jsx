@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-import DareAiLogo from '../assets/DareAi_logo.png'; // Import the logo image
+import DareAiLogo from '../assets/DareAISearch_logo.png'; // Import the logo image
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
