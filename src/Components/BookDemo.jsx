@@ -23,7 +23,8 @@ const BookDemo = () => {
 
   return (
     <section className="book-demo-section">
-      <h2 className="book-demo-heading">Claim your AI-Search Report Now</h2>
+      <h2 className="book-demo-heading">Book a Demo To See DareAISearch in Action
+</h2>
       <div className="book-demo-wrapper">
         <form
           className="book-demo-form"

@@ -33,9 +33,8 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <main className="container">
-        <Navbar />
-
         <div className="section-spacing">
           <HeroSection />
         </div>

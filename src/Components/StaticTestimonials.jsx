@@ -9,23 +9,23 @@ import partner3 from '../assets/partner33.png';
 const testimonials = [
   {
     quote:
-      "With their expertise in digital marketing and keenness to understand the client's business in-depth, Digidarts not only solved this problem but scaled our reseller acquisition to new levels.",
-    name: 'Sudhanshu Shekhar',
-    designation: 'Meesho\nVice President - Marketing',
+      "As our presence increased in AI-driven results, we observed meaningful gains in qualified traffic and add-to-cart rate. Sales pacing aligned more closely with forecast, and acquisition efficiency improved. The impact has been measurable and repeatable. GEO is now embedded in our go-to-market strategy thanks to DareAISearch.",
+    name: 'Marketing Manager',
+    designation: 'E-Commerce\nASICS',
     src: partner1,
   },
   {
     quote:
-      'The experience of working with Digidarts has set the benchmark, as far as I am concerned, with respect to the ways they service clients. I have worked with many agencies in the past, and I found Digidarts to be the best.',
-    name: 'Sriram Somayajula',
-    designation: 'Indigo Learn\nCo-Founder & CEO',
+      'Working with DareAISearch has set a new benchmark for partnership and delivery in our experience. The team is responsive, methodical, and focused on outcomes that matter. We\'ve engaged multiple providers over the years, and this engagement stands out for consistency and impact.',
+    name: 'Marketing Head',
+    designation: 'Retail & Digital Marketplaces\nConverse',
     src: partner2,
   },
   {
     quote:
-      'Digidarts spearheaded our full-funnel marketing and we are extremely satisfied with their performance. They have enabled our growth month after month and consistently achieve targets. I find the team to be diligent, creative and equipped to solve our queries.',
-    name: 'Mukund Rao',
-    designation: 'Muvin\nCo-Founder',
+      'Partnering with DareAISearch on GEO has been a reliable driver of month‑on‑month results. Presence in AI‑Search improved, qualified sessions strengthened, and targets were met consistently. The team is proactive, solution‑oriented, and quick to address operational needs. We\'re very pleased with the outcomes and the predictability they\'ve introduced.',
+    name: 'Senior Marketing Manager',
+    designation: 'Tide',
     src: partner3,
   },
 ];
@@ -61,7 +61,8 @@ const StaticTestimonials = () => {
 
   return (
     <div className="static-testimonials-section">
-      <h2 className="section-title">You're in Good Company</h2>
+      <h2 className="section-title">Trusted By Industry Leaders Worldwide
+</h2>
 
       <div className="testimonials-scroll-wrapper" ref={scrollRef}>
         <div className="testimonials-inner-grid">

@@ -26,12 +26,28 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Function to handle logo click - redirect to home
+  const handleLogoClick = () => {
+    window.location.href = '/';
+  };
+
   return (
     <nav className="navbar">
       {/* Left section: Brand name or logo */}
       <div className="navbar-brand">
-        {/* Replaced the text heading with an image */}
-        <img src={DareAiLogo} alt="DareAISearch Logo" className="navbar-logo" />
+        {/* Clickable logo that redirects to home */}
+        <img 
+          src={DareAiLogo} 
+          alt="DareAISearch Logo" 
+          className="navbar-logo" 
+          onClick={handleLogoClick}
+          onDragStart={(e) => {
+            e.dataTransfer.setData('text/uri-list', window.location.origin);
+            e.dataTransfer.effectAllowed = 'link';
+          }}
+          style={{ cursor: 'pointer' }}
+          title="Go to Homepage"
+        />
       </div>
 
       {/* Hamburger icon for mobile view */}

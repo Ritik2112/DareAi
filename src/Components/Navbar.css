@@ -6,35 +6,32 @@
   display: flex; /* Use flexbox for alignment */
   justify-content: space-between; /* Distribute items with space between them */
   align-items: center; /* Vertically center items */
-  padding: 0px 30px; /* Even less vertical and horizontal padding */
+  padding: 35px  70px; /* Added more left and right padding */
   background-color: rgb(255, 255, 255); /* Updated background color */
   font-family: 'Poppins';
-  position: relative; /* Needed for absolute positioning of mobile menu */
+  position: fixed; /* Fixed position to always stay at top */
   z-index: 1000; /* Ensure navbar is above the sliding menu when closed */
-  border-radius: 10px; /* Even smaller border radius */
-  width: 92vw; /* Make navbar width a bit smaller than full width */
-  max-width: 1200px; /* Prevent it from being too wide on large screens */
-margin-top: -40px;
-padding: 1px;
-  top: 0;
+  border-radius: 0; /* Remove border radius for full width */
+  width: 100vw; /* Full viewport width */
+  left: 0; /* Align to left edge */
+  top: 0; /* Stick to very top */
   box-sizing: border-box;
-  
+  height: 60px; /* Fixed height for consistency */
+  border-bottom: #ede9e9 1px solid; /* Subtle bottom border for separation */
 }
 
 /* Styling for the brand/logo on the left */
 .navbar-brand {
-  padding: 0.5rem 1rem;
-  /* Removed text-specific styles like font-size and font-weight */
+  padding: 0; /* Remove extra padding for cleaner look */
 }
 
 /* Styling for the logo image */
 .navbar-logo {
-  height: 80px; /* Adjust the height of the logo as needed */
+  height: 80px; /* Larger, more prominent logo size */
   max-height: 80px; /* Ensure the logo doesn't get too large */
   position: relative;
-  top: 8px; /* Adjust as needed */
-  left: 16px
-
+  top: 8px;
+  left:-8px;
 
 }
 
@@ -169,5 +166,51 @@ padding: 1px;
   top: 0px; /* Adjust as needed */
   left: 0px;
 
+  }
+}
+
+/* Tablet Responsive (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .navbar {
+    padding: 25px 40px; /* Reduced padding for tablet */
+    height: 70px; /* Slightly taller for tablet */
+  }
+
+  .navbar-logo {
+    height: 65px; /* Smaller logo for tablet */
+    max-height: 65px;
+  }
+
+  .navbar-links {
+    gap: 1.2rem; /* Closer spacing for tablet */
+  }
+
+  .navbar-links a {
+    font-size: 15px; /* Slightly smaller font for tablet */
+  }
+}
+
+/* Phone Responsive (up to 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px; /* Minimal padding for phone */
+    height: 60px; /* Compact height for phone */
+  }
+
+  .navbar-logo {
+    height: 50px; /* Smaller logo for phone */
+    max-height: 50px;
+    width: auto; /* Let width adjust proportionally */
+    left: 0px;
+    top: 0px;
+  }
+
+  .navbar-links {
+    gap: 0.8rem; /* Tighter spacing for phone */
+  }
+
+  .navbar-links a {
+    font-size: 14px; /* Smaller font for phone */
+    padding: 8px 12px; /* Reduced padding for phone */
   }
 }
