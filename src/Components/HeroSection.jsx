@@ -7,11 +7,8 @@ import React from 'react';
  import logo3 from '../assets/3.svg';
 
  const HeroSection = () => {
-  const handleScrollToSection = () => {
-    const section = document.getElementById('Book-A-Demo');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleScoreRedirect = () => {
+    window.open('https://searchscore.ai/', '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -28,7 +25,7 @@ import React from 'react';
           <img src={logo2} alt="Logo 2" />
           <img src={logo3} alt="Logo 3" />
         </div>
-        <button className="hero-button fade-in-delay" onClick={handleScrollToSection}>
+  <button className="hero-button fade-in-delay" onClick={handleScoreRedirect}>
           Get your AI-Search Score Now
         </button>
       </div>

@@ -3,29 +3,26 @@ import React, { useState, useRef, useEffect } from 'react';
 import './StaticTestimonials.css';
 
 import partner1 from '../assets/partner1.png';
-import partner2 from '../assets/partner2.png';
-import partner3 from '../assets/partner33.png';
+import partner2 from '../assets/partner3.png';
+import partner3 from '../assets/partner2.png';
 
 const testimonials = [
   {
-    quote:
-      "As our presence increased in AI-driven results, we observed meaningful gains in qualified traffic and add-to-cart rate. Sales pacing aligned more closely with forecast, and acquisition efficiency improved. The impact has been measurable and repeatable. GEO is now embedded in our go-to-market strategy thanks to DareAISearch.",
+    quote: `As our AI-driven visibility grew, we saw gains in qualified traffic and add-to-cart rate. Sales pacing aligned with forecasts, while acquisition efficiency improved. The impact is measurable and repeatable. GEO is now core to our go-to-market strategy with DareAISearch.`,
     name: 'Marketing Manager',
     designation: 'E-Commerce\nASICS',
     src: partner1,
   },
   {
-    quote:
-      'Working with DareAISearch has set a new benchmark for partnership and delivery in our experience. The team is responsive, methodical, and focused on outcomes that matter. We\'ve engaged multiple providers over the years, and this engagement stands out for consistency and impact.',
+    quote: `Working with DareAISearch has set a new benchmark for partnership and delivery in our experience. The team is responsive, methodical, and focused on outcomes that matter. We've engaged multiple providers over the years, and this engagement stands out for consistency and impact.`,
     name: 'Marketing Head',
     designation: 'Retail & Digital Marketplaces\nConverse',
     src: partner2,
   },
   {
-    quote:
-      'Partnering with DareAISearch on GEO has been a reliable driver of month‑on‑month results. Presence in AI‑Search improved, qualified sessions strengthened, and targets were met consistently. The team is proactive, solution‑oriented, and quick to address operational needs. We\'re very pleased with the outcomes and the predictability they\'ve introduced.',
+    quote: `Partnering with DareAISearch on GEO has driven reliable month-on-month results. AI-Search presence grew, qualified sessions improved, and targets were consistently achieved. The team is proactive, solution-oriented, and quick to address business needs.`,
     name: 'Senior Marketing Manager',
-    designation: 'Tide',
+    designation: 'Global Market Places\nTide',
     src: partner3,
   },
 ];
@@ -72,7 +69,7 @@ const StaticTestimonials = () => {
                 <div className="quote-icon">“</div>
                 <img
                   src={testimonial.src}
-                  alt="Company Logo"
+                  alt={`${testimonial.name} logo`}
                   className="company-logo-circle"
                 />
               </div>
