@@ -63,9 +63,6 @@ const Navbar = () => {
           <a href="#benefits" onClick={(e) => handleScrollToSection(e, 'benefits')}>Benefits</a>
         </li>
         <li>
-          <a href="#What-is-geo" onClick={(e) => handleScrollToSection(e, 'What-is-geo')}>What is GEO?</a>
-        </li>
-        <li>
           <a href="#features" onClick={(e) => handleScrollToSection(e, 'features')}>Features</a>
         </li>
         <li>
@@ -73,6 +70,12 @@ const Navbar = () => {
         </li>
         <li>
           <a href="#reviews" onClick={(e) => handleScrollToSection(e, 'reviews')}>Reviews</a>
+        </li>
+        <li>
+          <a href="https://digidarts.com/blog/" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>Blog</a>
+        </li>
+        <li>
+          <a href="#Book-A-Demo" className="book-demo-btn" onClick={(e) => handleScrollToSection(e, 'Book-A-Demo')}>Book a Demo</a>
         </li>
       </ul>
     </nav>

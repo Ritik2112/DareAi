@@ -62,7 +62,7 @@ export default function AdvantageSection() {
       </div>
 
       <div className="advantage-button-wrapper">
-        <button className="strategy-call-btn" onClick={handleScrollToSection}>Book your strategy call</button>
+        <button className="strategy-call-btn" onClick={handleScrollToSection}>Book a Demo</button>
       </div>
     </section>
   );
