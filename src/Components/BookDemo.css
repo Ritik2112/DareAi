@@ -122,7 +122,7 @@
 @media (min-width: 901px) {
   .form-image {
     position: absolute;
-    right: 40px;
+    right: 0; /* flush to inner right edge on desktop only */
     bottom: 0;
     max-width: 400px;
     margin: 0;
@@ -147,8 +147,8 @@
   }
 
 .form-image {
-    position: absolute;
-    right: 40px;
+  position: absolute;
+  right: 0;
     bottom: 0;        /* stick image to bottom */
     max-width: 350px; /* a little smaller for this range */
   }

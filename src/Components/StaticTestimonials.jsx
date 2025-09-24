@@ -16,7 +16,7 @@ const testimonials = [
   {
     quote: `Working with DareAISearch has set a new benchmark for partnership and delivery in our experience. The team is responsive, methodical, and focused on outcomes that matter. We've engaged multiple providers over the years, and this engagement stands out for consistency and impact.`,
     name: 'Marketing Head',
-    designation: 'Retail & Digital Marketplaces\nConverse',
+    designation: 'Retail & Digital Marketplaces\nSkin111',
     src: partner2,
   },
   {

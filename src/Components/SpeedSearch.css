@@ -12,7 +12,14 @@
   font-weight: 700;
   color: #000000;
   text-align: center;
+  line-height: 1.2;
 }
+
+.athena-ai-heading .visibility-os {
+  color: #888888; /* Grey color for Visibility OS */
+}
+
+
 
 /* Horizontal scroll wrapper */
 .athena-ai-scroll-wrapper {

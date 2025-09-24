@@ -7,6 +7,8 @@ import AdvantageSection from './Components/AdvantageSection';
 import SpeedSearch from './Components/SpeedSearch';
 import FeatureSection from './Components/FeatureSection';
 import StaticTestimonials from './Components/StaticTestimonials.jsx';
+import FAQ from './Components/FAQ.jsx';
+import CaseStudies from './Components/CaseStudies';
 import ScrollAnimation from './Components/ScrollAnimation';
 import './App.css';
 import Geo from './Components/Geo';
@@ -59,12 +61,20 @@ function App() {
           <NewSection />
         </section>
 
-        <section id="features" className="section-spacing">
+       {/* <section id="features" className="section-spacing">
           {withAnimation(<AdvantageSection />)}
+        </section>*/}
+
+        <section id="case-studies" className="section-spacing">
+          {withAnimation(<CaseStudies />)}
         </section>
 
         <section id="reviews" className="section-spacing">
           {withAnimation(<StaticTestimonials />)}
+        </section>
+
+        <section id="faq-section" className="section-spacing">
+          {withAnimation(<FAQ />)}
         </section>
 
         <section id="Book-A-Demo" className="section-spacing">

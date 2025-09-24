@@ -1,0 +1,114 @@
+.case-section {
+  padding: 5px 30px;
+  max-width: 1200px;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: #000000;
+  margin: 0 auto;
+}
+
+.case-heading {
+  text-align: center;
+  font-size: clamp(28px, 5vw, 50px);
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+
+.case-card {
+  border-radius: 14px;
+  padding: 18px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 0px #000000; /* mimic advantage card thick base */
+  text-align: left;
+  border: 1px solid #cfcfcf;
+  transition: transform 0.2s ease;
+  position: relative;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.case-card.highlight {
+  background-color: #ffe500; /* exact AdvantageSection highlight */
+}
+
+.case-logo-wrap {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 12px auto; /* logo sits inside the card centered */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-logo-circle {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+  padding: 8px;
+  box-shadow: 0 6px 14px rgba(16,24,40,0.08);
+}
+
+.case-desc {
+  margin-top: 6px;
+  color: #111827;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.case-desc strong {
+  font-weight: 700;
+  color: #111827;
+}
+
+@media (max-width: 991px) {
+  .case-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .case-grid {
+    grid-template-columns: 1fr;
+    margin-bottom: 0px;
+  }
+
+  .case-section {
+    padding: 0px 0;
+  }
+
+  .case-card {
+    padding: 20px 24px;
+  }
+}
+
+.case-button-wrapper {
+  text-align: center;
+  margin-top: 96px; /* increased gap between cards and button */
+}
+
+/* reuse .strategy-call-btn from AdvantageSection if available; else provide a fallback */
+.strategy-call-btn {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.strategy-call-btn:hover { transform: translateY(-2px); }

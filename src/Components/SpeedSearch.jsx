@@ -79,7 +79,7 @@ function SpeedSearch() {
   return (
     <section className="athena-ai-section">
       <h2 className="athena-ai-heading">
-        Meet DareAISearch - World’s First GEO Solution
+        DareAISearch : AI-Search <span className="visibility-os">Visibility OS</span>
       </h2>
 
       <div className="athena-ai-scroll-wrapper" ref={scrollRef}>

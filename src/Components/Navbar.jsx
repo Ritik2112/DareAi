@@ -62,9 +62,9 @@ const Navbar = () => {
         <li>
           <a href="#benefits" onClick={(e) => handleScrollToSection(e, 'benefits')}>Benefits</a>
         </li>
-        <li>
+        {/* <li>
           <a href="#features" onClick={(e) => handleScrollToSection(e, 'features')}>Features</a>
-        </li>
+        </li> */}
         <li>
           <a href="#Why-DareAi" onClick={(e) => handleScrollToSection(e, 'Why-DareAi')}>Why DareAISearch</a>
         </li>
